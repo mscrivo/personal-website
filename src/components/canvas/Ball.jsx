@@ -1,16 +1,16 @@
-import React, { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
+import React, { Suspense } from 'react'
+import { Canvas } from '@react-three/fiber'
 import {
   Decal,
   Float,
   OrbitControls,
   Preload,
   useTexture,
-} from '@react-three/drei';
-import Loader from '../Loader';
+} from '@react-three/drei'
+import Loader from '../Loader'
 
 const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl]);
+  const [decal] = useTexture([props.imgUrl])
 
   return (
     <Float speed={2.5} rotationIntensity={1} floatIntensity={2}>
@@ -32,8 +32,8 @@ const Ball = (props) => {
         />
       </mesh>
     </Float>
-  );
-};
+  )
+}
 
 const BallCanvas = ({ icon }) => {
   return (
@@ -45,7 +45,7 @@ const BallCanvas = ({ icon }) => {
 
       <Preload all />
     </Canvas>
-  );
-};
+  )
+}
 
-export default BallCanvas;
+export default BallCanvas

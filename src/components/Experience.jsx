@@ -1,14 +1,14 @@
 import {
   VerticalTimeline,
   VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
-import { motion } from 'framer-motion';
-import 'react-vertical-timeline-component/style.min.css';
-import { styles } from '../styles';
-import { experiences } from '../constants';
-import { SectionWrapper } from '../hoc';
-import { download, downloadHover, resume } from '../assets';
-import { textVariant } from '../utils/motion';
+} from 'react-vertical-timeline-component'
+import { motion } from 'framer-motion'
+import 'react-vertical-timeline-component/style.min.css'
+import { styles } from '../styles'
+import { experiences } from '../constants'
+import { SectionWrapper } from '../hoc'
+import { download, downloadHover, resume } from '../assets'
+import { textVariant } from '../utils/motion'
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
@@ -37,19 +37,21 @@ const ExperienceCard = ({ experience }) => (
           className="w-[60%] h-[60%] object-contain"
         />
       </div>
-    }>
+    }
+  >
     <div>
       <h3 className="text-jetLight text-[24px] font-bold font-beckman tracking-[2px]">
         {experience.title}
       </h3>
       <p
         className="text-taupe text-[22px] font-semibold font-overcameBold tracking-[1px]"
-        style={{ margin: 0 }}>
+        style={{ margin: 0 }}
+      >
         {experience.company_name}
       </p>
     </div>
   </VerticalTimelineElement>
-);
+)
 
 const Experience = () => {
   return (
@@ -90,7 +92,8 @@ const Experience = () => {
                   className="w-[45%] h-[45%] object-contain"
                 />
               </div>
-            }>
+            }
+          >
             <button
               className="live-demo flex justify-between 
               sm:text-[18px] text-[14px] text-timberWolf 
@@ -103,19 +106,20 @@ const Experience = () => {
               onClick={() =>
                 window.open(
                   'resume link', //paste the link to your resume here
-                  '_blank'
+                  '_blank',
                 )
               }
               onMouseOver={() => {
                 document
                   .querySelector('.download-btn')
-                  .setAttribute('src', downloadHover);
+                  .setAttribute('src', downloadHover)
               }}
               onMouseOut={() => {
                 document
                   .querySelector('.download-btn')
-                  .setAttribute('src', download);
-              }}>
+                  .setAttribute('src', download)
+              }}
+            >
               MY RESUME
               <img
                 src={download}
@@ -128,7 +132,7 @@ const Experience = () => {
         </VerticalTimeline>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default SectionWrapper(Experience, 'work');
+export default SectionWrapper(Experience, 'work')

@@ -27,7 +27,7 @@ import {
   dcc,
   kelhel,
   microverse,
-} from '../assets';
+} from '../assets'
 
 export const navLinks = [
   {
@@ -42,7 +42,7 @@ export const navLinks = [
     id: 'contact',
     title: 'Contact',
   },
-];
+]
 
 const services = [
   {
@@ -61,7 +61,7 @@ const services = [
     title: 'Software Prototyping',
     icon: prototyping,
   },
-];
+]
 
 const technologies = [
   {
@@ -120,7 +120,7 @@ const technologies = [
     name: 'docker',
     icon: docker,
   },
-];
+]
 
 const experiences = [
   {
@@ -151,7 +151,7 @@ const experiences = [
     iconBg: '#333333',
     date: 'Sep 2022 - Present',
   },
-];
+]
 
 const projects = [
   {
@@ -266,6 +266,6 @@ const projects = [
     repo: 'https://github.com/shaqdeff/Nyeusi-Fest-Site',
     demo: 'https://shaqdeff.github.io/Nyeusi-Fest-Site/',
   },
-];
+]
 
-export { services, technologies, experiences, projects };
+export { services, technologies, experiences, projects }
