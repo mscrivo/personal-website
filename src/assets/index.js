@@ -9,8 +9,6 @@ import ux from './icons/ux.png'
 import sre from './icons/sre.png'
 import devops from './icons/devops.png'
 import perf from './icons/perf.png'
-import frontend from './icons/frontend.png'
-import prototyping from './icons/prototyping.png'
 import github from './icons/github.png'
 import close from './icons/close.png'
 import download from './icons/download.png'
@@ -23,11 +21,15 @@ import send from './icons/send.png'
 import sendHover from './icons/sendHover.png'
 
 import docker from './tech/docker.png'
+import dotnet from './tech/dotnet.png'
 import git from './tech/git.png'
+import k8s from './tech/k8s.png'
 import postgresql from './tech/postgresql.png'
 import rubyrails from './tech/rubyrails.png'
+import ruby from './tech/ruby.png'
 
 import ootd from './projects/ootd.webp'
+import oldsite from './projects/oldsite.png'
 
 export {
   bwmap,
@@ -36,8 +38,7 @@ export {
   logotext,
   backend,
   ux,
-  frontend,
-  prototyping,
+  k8s,
   github,
   close,
   download,
@@ -50,10 +51,13 @@ export {
   send,
   sendHover,
   docker,
+  dotnet,
   git,
   sre,
   devops,
   postgresql,
   rubyrails,
+  ruby,
   ootd,
+  oldsite,
 }

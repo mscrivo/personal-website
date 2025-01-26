@@ -4,10 +4,14 @@ import {
   devops,
   perf,
   git,
+  k8s,
   docker,
+  dotnet,
   postgresql,
   rubyrails,
+  ruby,
   ootd,
+  oldsite,
   resume,
 } from '../assets'
 
@@ -51,6 +55,10 @@ const services = [
 
 const technologies = [
   {
+    name: 'Ruby',
+    icon: ruby,
+  },
+  {
     name: 'Rails',
     icon: rubyrails,
   },
@@ -65,6 +73,14 @@ const technologies = [
   {
     name: 'docker',
     icon: docker,
+  },
+  {
+    name: 'k8s',
+    icon: k8s,
+  },
+  {
+    name: 'dotnet',
+    icon: dotnet,
   },
 ]
 
@@ -115,6 +131,13 @@ const projects = [
     image: ootd,
     repo: 'https://github.com/mscrivo/OotD',
     demo: 'https://outlookonthedesktop.com',
+  },
+  {
+    id: 'project-2',
+    name: 'Old Website',
+    description: 'This was my old website circa 2000-2010 just for nostalgia.',
+    image: oldsite,
+    demo: 'https://michaelscrivo.com/old',
   },
 ]
 
