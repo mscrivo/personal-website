@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { styles } from '../styles'
-import { bwmap, worldmap } from '../assets'
+import { bwmap } from '../assets'
 
 const Hero = () => {
   return (
@@ -8,14 +8,14 @@ const Hero = () => {
       <div className="absolute top-0 left-0 z-0 h-[100vh] w-screen">
         <img
           src={bwmap}
-          alt="world map"
+          alt="toronto"
           className="w-full h-full sm:block hidden object-cover"
         />
       </div>
       <div className="absolute top-0 left-0 z-0 h-[100vh] w-screen">
         <img
-          src={worldmap}
-          alt="world map"
+          src={bwmap}
+          alt="toronto"
           className="w-full h-full sm:hidden block object-cover"
         />
       </div>
