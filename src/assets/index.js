@@ -1,7 +1,6 @@
 import bwmap from './backgrounds/toronto.jpg'
 import nairobi from './backgrounds/nairobi.png'
-import whiteabstract from './backgrounds/white-abstract.png'
-import worldmap from './backgrounds/world-map.png'
+import circuitboard from './backgrounds/circuit-board.jpg'
 
 import logo from './logo/logo-bw.png'
 import logotext from './logo/logo-text-black.png'
@@ -45,9 +44,7 @@ import ootd from './projects/ootd.webp'
 
 export {
   bwmap,
-  nairobi,
-  whiteabstract,
-  worldmap,
+  circuitboard,
   logo,
   logotext,
   backend,
