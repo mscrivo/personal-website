@@ -48,7 +48,7 @@ const Hero = () => {
               </span>
             </h1>
             <p className={`${styles.heroSubText} mt-2 text-eerieBlack`}>
-              I'm a backend software engineer working in the Toronto area.
+              I'm an experienced software engineer working in the Toronto area.
             </p>
           </div>
           <div

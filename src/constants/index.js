@@ -1,17 +1,14 @@
 import {
-  frontend,
   backend,
-  ux,
-  prototyping,
+  sre,
+  devops,
+  perf,
   git,
   docker,
   postgresql,
   rubyrails,
   ootd,
-  coverhunt,
-  dcc,
-  kelhel,
-  microverse,
+  resume,
 } from '../assets'
 
 export const navLinks = [
@@ -35,20 +32,20 @@ export const navLinks = [
 
 const services = [
   {
-    title: 'Frontend Developer',
-    icon: frontend,
-  },
-  {
     title: 'Backend Developer',
     icon: backend,
   },
   {
-    title: 'UI/UX Design',
-    icon: ux,
+    title: 'Devops & Tooling',
+    icon: devops,
   },
   {
-    title: 'Software Prototyping',
-    icon: prototyping,
+    title: 'Performance Optimization',
+    icon: perf,
+  },
+  {
+    title: 'SRE',
+    icon: sre,
   },
 ]
 
@@ -73,32 +70,39 @@ const technologies = [
 
 const experiences = [
   {
-    title: 'Front-End Developer',
-    company_name: 'Cover Hunt',
-    icon: coverhunt,
+    title: 'Application Developer',
+    company_name: 'InfoTRAC Solutions Inc',
+    icon: resume,
     iconBg: '#333333',
-    date: 'Aug 2021 - Feb 2022',
+    date: 'Jun 2003 - Feb 2006',
   },
   {
-    title: 'Mentor (Volunteer)',
-    company_name: 'Microverse',
-    icon: microverse,
+    title: 'Senior Engineer',
+    company_name: 'Eloqua',
+    icon: resume,
     iconBg: '#333333',
-    date: 'Mar 2022 - May 2022',
+    date: 'Feb 2006 - Dec 2012',
   },
   {
-    title: 'Junior Software Engineer',
-    company_name: 'Kelhel',
-    icon: kelhel,
+    title: 'Principal Member of Technical Staff',
+    company_name: 'Oracle',
+    icon: resume,
     iconBg: '#333333',
-    date: 'May 2022 - Oct 2022',
+    date: 'Jan 2013 - Oct 2016',
   },
   {
-    title: 'Full Stack Developer',
-    company_name: 'Diversity Cyber Council',
-    icon: dcc,
+    title: 'Senior Developer',
+    company_name: 'Nudge',
+    icon: resume,
     iconBg: '#333333',
-    date: 'Sep 2022 - Present',
+    date: 'Oct 2016 - Mar 2020',
+  },
+  {
+    title: 'Principal Engineer',
+    company_name: 'Affinity',
+    icon: resume,
+    iconBg: '#333333',
+    date: 'Mar 2020 - Present',
   },
 ]
 
@@ -106,21 +110,8 @@ const projects = [
   {
     id: 'project-1',
     name: 'OotD',
-    description: 'Outlook on the Desktop',
-    tags: [
-      {
-        name: 'react',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'mongodb',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'tailwind',
-        color: 'pink-text-gradient',
-      },
-    ],
+    description:
+      'Outlook on the Desktop is a Windows application that keeps your Outlook calendar on your desktop.',
     image: ootd,
     repo: 'https://github.com/mscrivo/OotD',
     demo: 'https://outlookonthedesktop.com',

@@ -33,19 +33,20 @@ const About = () => {
     <div className="-mt-[6rem]">
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <h2 className={styles.sectionHeadText}>About Me.</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
       >
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis
-        sapiente ipsum dolorum dicta eaque cumque inventore molestias, beatae ea
-        quaerat alias accusamus voluptas autem! Alias odit voluptates in totam
-        vitae dignissimos minus eaque culpa unde tempore dolore aperiam
-        obcaecati voluptatum aliquam corrupti, suscipit accusamus! Odit unde
-        veniam dolorum ipsum doloribus.
+        I graduated from the University of Toronto with a specialist in Software
+        Engineering, a major in Philosophy and minor in Mathematics. <br />
+        <br />I have a passion for the craft of software development, with a
+        particular specialization in developer tooling and performance
+        optimization. If your codebase and developer tooling are a mess and in
+        need of some TLC, or your app backend is out of date and slow, I'm your
+        person!
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

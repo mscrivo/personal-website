@@ -6,6 +6,9 @@ import logotext from './logo/logo-text-black.png'
 
 import backend from './icons/backend.png'
 import ux from './icons/ux.png'
+import sre from './icons/sre.png'
+import devops from './icons/devops.png'
+import perf from './icons/perf.png'
 import frontend from './icons/frontend.png'
 import prototyping from './icons/prototyping.png'
 import github from './icons/github.png'
@@ -47,11 +50,14 @@ export {
   pineapple,
   pineappleHover,
   menu,
+  perf,
   resume,
   send,
   sendHover,
   docker,
   git,
+  sre,
+  devops,
   postgresql,
   rubyrails,
   ootd,
