@@ -14,7 +14,8 @@ const Contact = () => {
         <p className={styles.sectionHeadTextLight}>Get in touch</p>
         <span className={`${styles.sectionSubText} flex items-center gap-2`}>
           <MdEmail className="text-[24px]" />
-          Contact me at: mscrivo + @gmail.com
+          Contact me at: mscrivo + @gmail.com or on{' '}
+          <a href="https://www.linkedin.com/in/michaelscrivo/">LinkedIn</a>
         </span>
       </motion.div>
     </div>

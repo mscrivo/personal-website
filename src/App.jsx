@@ -7,6 +7,7 @@ import {
   Navbar,
   Tech,
   Projects,
+  Footer,
 } from './components'
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
         </div>
         <div className="relative z-0">
           <Contact />
+          <Footer />
         </div>
       </div>
     </BrowserRouter>
