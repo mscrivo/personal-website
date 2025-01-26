@@ -70,7 +70,7 @@ const Navbar = () => {
               </div>
               <ul
                 className="list-none flex flex-col -gap-[1rem] 
-                items-start justify-end mt-[10rem] -ml-[35px]"
+                items-start justify-end mt-[5rem]"
               >
                 {navLinks.map((nav) => (
                   <li
@@ -78,7 +78,7 @@ const Navbar = () => {
                     key={nav.id}
                     className={`${
                       active === nav.title ? 'text-french' : 'text-eerieBlack'
-                    } text-[88px] font-bold font-arenq 
+                    } text-[48px] font-medium font-mova 
                       uppercase tracking-[1px] cursor-pointer`}
                     onClick={() => {
                       setToggle(!toggle)

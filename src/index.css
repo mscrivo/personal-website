@@ -51,22 +51,6 @@
   width: 70%;
 }
 
-#about {
-  margin-left: -24px;
-  font-size: 100px;
-}
-
-#projects {
-  margin-left: -2px;
-  font-size: 100px;
-}
-
-#contact {
-  margin-left: -20px;
-  font-size: 95px;
-  letter-spacing: -2px;
-}
-
 .hero-heading {
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
