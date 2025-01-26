@@ -12,6 +12,10 @@ import {
   ruby,
   ootd,
   oldsite,
+  terraform,
+  macos,
+  linux,
+  windows,
   resume,
 } from '../assets'
 
@@ -63,24 +67,40 @@ const technologies = [
     icon: rubyrails,
   },
   {
-    name: 'postgresql',
+    name: 'PostgreSQL',
     icon: postgresql,
   },
   {
-    name: 'git',
+    name: 'Git',
     icon: git,
   },
   {
-    name: 'docker',
+    name: 'Docker',
     icon: docker,
   },
   {
-    name: 'k8s',
+    name: 'Kubernetes',
     icon: k8s,
   },
   {
-    name: 'dotnet',
+    name: '.net core',
     icon: dotnet,
+  },
+  {
+    name: 'Terraform',
+    icon: terraform,
+  },
+  {
+    name: 'macOS',
+    icon: macos,
+  },
+  {
+    name: 'Linux',
+    icon: linux,
+  },
+  {
+    name: 'Windows',
+    icon: windows,
   },
 ]
 
@@ -107,7 +127,7 @@ const experiences = [
     date: 'Jan 2013 - Oct 2016',
   },
   {
-    title: 'Senior Developer',
+    title: 'Staff Developer',
     company_name: 'Nudge',
     icon: resume,
     iconBg: '#333333',
@@ -125,19 +145,19 @@ const experiences = [
 const projects = [
   {
     id: 'project-1',
+    name: 'Old Website',
+    description: 'This was my old website circa 2000-2010 just for nostalgia.',
+    image: oldsite,
+    demo: 'https://michaelscrivo.com/old',
+  },
+  {
+    id: 'project-2',
     name: 'OotD',
     description:
       'Outlook on the Desktop is a Windows application that keeps your Outlook calendar on your desktop.',
     image: ootd,
     repo: 'https://github.com/mscrivo/OotD',
     demo: 'https://outlookonthedesktop.com',
-  },
-  {
-    id: 'project-2',
-    name: 'Old Website',
-    description: 'This was my old website circa 2000-2010 just for nostalgia.',
-    image: oldsite,
-    demo: 'https://michaelscrivo.com/old',
   },
 ]
 

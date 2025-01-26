@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import {
   Decal,
@@ -6,17 +6,25 @@ import {
   OrbitControls,
   Preload,
   useTexture,
+  Html,
 } from '@react-three/drei'
 import Loader from '../Loader'
 
-const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl])
+const Ball = ({ imgUrl, hoverText }) => {
+  const [hovered, setHovered] = useState(false)
+  const [decal] = useTexture([imgUrl])
 
   return (
     <Float speed={2.5} rotationIntensity={1} floatIntensity={2}>
       <ambientLight intensity={0.25} />
       <directionalLight position={[0, 0, 0.05]} />
-      <mesh castShadow receiveShadow scale={2.75}>
+      <mesh
+        castShadow
+        receiveShadow
+        scale={2.75}
+        onPointerOver={() => setHovered(true)}
+        onPointerOut={() => setHovered(false)}
+      >
         <icosahedronGeometry args={[1, 2]} />
         <meshStandardMaterial
           color="#3d3d3d"
@@ -30,19 +38,25 @@ const Ball = (props) => {
           flatShading
           map={decal}
         />
+        {hovered && (
+          <Html position={[0, 1, 0]} center>
+            <div className="p-2 bg-black/75 text-white rounded">
+              {hoverText}
+            </div>
+          </Html>
+        )}
       </mesh>
     </Float>
   )
 }
 
-const BallCanvas = ({ icon }) => {
+const BallCanvas = ({ icon, name }) => {
   return (
     <Canvas frameloop="always" gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<Loader />}>
         <OrbitControls enableZoom={false} position0={0} />
-        <Ball imgUrl={icon} />
+        <Ball imgUrl={icon} hoverText={name} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   )

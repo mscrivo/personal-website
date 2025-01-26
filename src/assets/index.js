@@ -27,6 +27,10 @@ import k8s from './tech/k8s.png'
 import postgresql from './tech/postgresql.png'
 import rubyrails from './tech/rubyrails.png'
 import ruby from './tech/ruby.png'
+import terraform from './tech/terraform.png'
+import macos from './tech/macos.gif'
+import linux from './tech/linux.png'
+import windows from './tech/windows.png'
 
 import ootd from './projects/ootd.webp'
 import oldsite from './projects/oldsite.png'
@@ -60,4 +64,8 @@ export {
   ruby,
   ootd,
   oldsite,
+  terraform,
+  macos,
+  linux,
+  windows,
 }
