@@ -29,6 +29,10 @@
   src: url('./fonts/overcame-outline.woff');
 }
 
+body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
 * {
   margin: 0;
   padding: 0;
