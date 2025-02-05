@@ -47,4 +47,6 @@ const Projects = () => {
   )
 }
 
-export default SectionWrapper(Projects, 'projects')
+const WrappedProjects = SectionWrapper(Projects, 'projects')
+WrappedProjects.displayName = "Projects"
+export default WrappedProjects

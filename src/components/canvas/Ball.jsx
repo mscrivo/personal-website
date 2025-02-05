@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import {
@@ -8,6 +9,7 @@ import {
   useTexture,
   Html,
 } from '@react-three/drei'
+import PropTypes from 'prop-types'
 import Loader from '../Loader'
 
 const Ball = ({ imgUrl, hoverText }) => {
@@ -60,6 +62,16 @@ const BallCanvas = ({ icon, name }) => {
       <Preload all />
     </Canvas>
   )
+}
+
+Ball.propTypes = {
+  imgUrl: PropTypes.string.isRequired,
+  hoverText: PropTypes.string.isRequired,
+}
+
+BallCanvas.propTypes = {
+  icon: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 }
 
 export default BallCanvas

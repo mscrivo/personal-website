@@ -24,4 +24,6 @@ const Tech = () => {
   )
 }
 
-export default SectionWrapper(Tech, 'tech')
+const WrappedTech = SectionWrapper(Tech, 'tech')
+WrappedTech.displayName = 'Tech'
+export default WrappedTech

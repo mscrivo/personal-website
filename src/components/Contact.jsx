@@ -26,4 +26,6 @@ const Contact = () => {
   )
 }
 
-export default SectionWrapper(Contact, 'contact')
+const WrappedContact = SectionWrapper(Contact, 'contact')
+WrappedContact.displayName = 'Contact'
+export default WrappedContact

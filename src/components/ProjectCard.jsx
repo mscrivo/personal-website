@@ -1,6 +1,7 @@
 import { github, pineapple, pineappleHover } from '../assets'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../utils/motion'
+import PropTypes from 'prop-types'
 
 const ProjectCard = ({
   id,
@@ -112,6 +113,18 @@ const ProjectCard = ({
       )}
     </motion.div>
   )
+}
+
+ProjectCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  repo: PropTypes.string.isRequired,
+  demo: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+  active: PropTypes.number.isRequired,
+  handleClick: PropTypes.func.isRequired,
 }
 
 export default ProjectCard

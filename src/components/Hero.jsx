@@ -38,7 +38,7 @@ const Hero = () => {
             <h1
               className={`${styles.heroHeadText} text-eerieBlack font-poppins uppercase`}
             >
-              Hi, I'm{' '}
+              Hi, I&apos;m{' '}
               <span
                 className="sm:text-battleGray sm:text-[90px] 
                 text-eerieBlack text-[50px] font-mova
@@ -48,7 +48,8 @@ const Hero = () => {
               </span>
             </h1>
             <p className={`${styles.heroSubText} mt-2 text-eerieBlack`}>
-              I'm an experienced software engineer working in the Toronto area.
+              I&apos;m an experienced software engineer working in the Toronto
+              area.
             </p>
           </div>
           <div
