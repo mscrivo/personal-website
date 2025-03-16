@@ -7,10 +7,10 @@ import ServiceCard from './ServiceCard'
 
 const About = () => {
   return (
-    <div className="-mt-[6rem]">
+    <div className="-mt-[4rem]">
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>About Me.</h2>
+        <h2 className={styles.sectionHeadText}>About Me</h2>
       </motion.div>
 
       <motion.p
@@ -22,8 +22,8 @@ const About = () => {
         <br />I have a passion for the craft of software development, with a
         particular specialization in developer tooling and performance
         optimization. If your codebase and developer tooling are a mess and in
-        need of some TLC, or your app backend is out of date and slow, I&apos;m your
-        person!
+        need of some TLC, or your app backend is out of date and slow, I&apos;m
+        your person!
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

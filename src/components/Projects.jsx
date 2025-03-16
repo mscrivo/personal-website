@@ -10,9 +10,9 @@ const Projects = () => {
   const [active, setActive] = useState('project-2')
 
   return (
-    <div className="-mt-[6rem]">
+    <div className="-mt-[2rem]">
       <motion.div variants={textVariant()}>
-        <h2 className={`${styles.sectionHeadTextLight}`}>Projects.</h2>
+        <h2 className={`${styles.sectionHeadTextLight}`}>Projects</h2>
       </motion.div>
 
       <div className="w-full flex">
@@ -48,5 +48,5 @@ const Projects = () => {
 }
 
 const WrappedProjects = SectionWrapper(Projects, 'projects')
-WrappedProjects.displayName = "Projects"
+WrappedProjects.displayName = 'Projects'
 export default WrappedProjects
