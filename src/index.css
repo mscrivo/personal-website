@@ -1,8 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  /* Custom Colors */
+  --color-primary: #050816;
+  --color-secondary: #aaa6c3;
+  --color-tertiary: #151030;
+  --color-black-100: #100d25;
+  --color-black-200: #090325;
+  --color-white-100: #f3f3f3;
+  --color-flashWhite: #f4f4f6;
+  --color-platinum: #e6e6e9;
+  --color-platinumLight: #f4f4f5;
+  --color-timberWolf: #d4d4d8;
+  --color-taupe: #9999a1;
+  --color-silver: #d6d6d6;
+  --color-dim: #66666e;
+  --color-battleGray: #858585;
+  --color-french: #b5b5ba;
+  --color-night: #141414;
+  --color-jet: #292929;
+  --color-jetLight: #333333;
+  --color-jetGray: #6d6d74;
+  --color-richBlack: #2e2e2e;
+  --color-eerieBlack: #1f1f1f;
+  --color-onyx: #5b5b5b;
+
+  /* Custom Breakpoints */
+  --breakpoint-xs: 450px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-xmd: 900px;
+  --breakpoint-lg: 1025px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1800px;
+
+  /* Custom Container Sizes */
+  --container-7xl: 80rem;
+
+  /* Custom Box Shadows */
+  --shadow-card: 0px 35px 120px -15px #1f1f1f;
+  --shadow-cardLight: 0px 19px 38px #eaeaec, 0px 15px 12px #eaeaec;
+
+  /* Custom Font Families */
+  --font-family-arenq: 'Arenq';
+  --font-family-beckman: 'Beckman';
+  --font-family-mova: 'Mova';
+  --font-family-overcameBold: 'Overcame Bold';
+  --font-family-overcameOutline: 'Overcame Outline';
+  --font-family-poppins: 'Poppins', sans-serif;
+}
 
 @font-face {
   font-family: 'Arenq';
@@ -29,14 +78,92 @@
   src: url('./fonts/overcame-outline.woff');
 }
 
+/* Custom background image utilities */
+.bg-about {
+  background-image: linear-gradient(
+    165deg,
+    rgba(244, 244, 246, 1) 100%,
+    rgba(122, 122, 122, 1) 100%
+  );
+}
+
+.bg-experience {
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(244, 244, 246, 0.5) 60%,
+      rgba(10, 10, 10, 0.2) 100%
+    ),
+    url('/src/assets/backgrounds/white-abstract.png');
+}
+
+.bg-experienceLight {
+  background-image: linear-gradient(
+    137deg,
+    rgba(244, 244, 246, 0.5) 60%,
+    rgba(10, 10, 10, 0.9) 60%
+  );
+}
+
+/* Hero background - mobile first, then desktop */
+.bg-hero-mobile {
+  background-image: linear-gradient(
+    137deg,
+    rgba(244, 244, 246, 0.8) 60%,
+    rgba(10, 10, 10, 1) 60%
+  );
+}
+
+@media (min-width: 640px) {
+  .bg-hero {
+    background-image: linear-gradient(
+      135deg,
+      rgba(244, 244, 246, 0.8) 60%,
+      rgba(10, 10, 10, 0.95) 60%
+    );
+  }
+}
+
+.bg-tech {
+  background-image:
+    linear-gradient(
+      165deg,
+      rgba(20, 20, 20, 0.8) 100%,
+      rgba(109, 109, 116, 0.8) 100%
+    ),
+    url('/src/assets/backgrounds/circuit-board.jpg');
+}
+
+/* Custom font family utilities */
+.font-arenq {
+  font-family: 'Arenq';
+}
+
+.font-beckman {
+  font-family: 'Beckman';
+}
+
+.font-mova {
+  font-family: 'Mova';
+}
+
+.font-overcameBold {
+  font-family: 'Overcame Bold';
+}
+
+.font-overcameOutline {
+  font-family: 'Overcame Outline';
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   scroll-behavior: smooth;
   color-scheme: dark;
 }

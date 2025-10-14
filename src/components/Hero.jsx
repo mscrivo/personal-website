@@ -21,7 +21,7 @@ const Hero = () => {
       </div>
       <section
         className="relative flex sm:flex-row flex-col w-full h-screen mx-auto 
-        sm:bg-hero bg-hero-mobile overflow-hidden"
+        bg-hero bg-hero-mobile overflow-hidden"
       >
         <div
           className={`absolute inset-0 sm:top-[250px] top-[150px] 
