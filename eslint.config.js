@@ -6,10 +6,13 @@ import reactThreePlugin from '@react-three/eslint-plugin'
 import globals from 'globals'
 
 export default [
+  { ignores: ['dist', 'node_modules'] },
   js.configs.recommended,
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat['jsx-runtime'],
+  reactHookPlugin.configs.flat.recommended,
   {
+    files: ['**/*.{js,jsx}'],
     settings: { react: { version: '19' } },
     plugins: {
       react: reactPlugin,
@@ -19,11 +22,11 @@ export default [
     },
     languageOptions: {
       ...reactPlugin.configs.flat.recommended.languageOptions,
-      ecmaVersion: 2022,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
-          sourceType: 'module',
         },
       },
       globals: {
