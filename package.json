@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@react-three/eslint-plugin": "^0.1.2",
-    "@tailwindcss/postcss": "^4.1.16",
+    "@tailwindcss/postcss": "^4.1.18",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
