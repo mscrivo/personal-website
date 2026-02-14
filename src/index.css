@@ -114,6 +114,60 @@
   );
 }
 
+.hero-overlay {
+  background:
+    radial-gradient(
+      1100px 520px at 12% 18%,
+      rgba(244, 244, 246, 0.85) 0%,
+      rgba(244, 244, 246, 0) 65%
+    ),
+    radial-gradient(
+      900px 520px at 78% 55%,
+      rgba(10, 10, 10, 0.55) 0%,
+      rgba(10, 10, 10, 0) 60%
+    );
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.hero-cta:focus-visible {
+  outline: 2px solid rgba(41, 41, 41, 0.6);
+  outline-offset: 3px;
+}
+
+.hero-cta-primary {
+  background: rgba(20, 20, 20, 0.95);
+  color: #f4f4f6;
+  box-shadow: 0 16px 40px rgba(10, 10, 10, 0.25);
+}
+
+.hero-cta-primary:hover {
+  transform: translateY(-2px);
+  background: rgba(10, 10, 10, 1);
+}
+
+.hero-cta-secondary {
+  background: rgba(244, 244, 246, 0.7);
+  color: #1f1f1f;
+  border: 1px solid rgba(41, 41, 41, 0.25);
+}
+
+.hero-cta-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(244, 244, 246, 0.95);
+}
+
 @media (min-width: 640px) {
   .bg-hero {
     background-image: linear-gradient(

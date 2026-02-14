@@ -23,10 +23,11 @@ const Hero = () => {
         className="relative flex sm:flex-row flex-col w-full h-screen mx-auto 
         bg-hero bg-hero-mobile overflow-hidden"
       >
+        <div className="absolute inset-0 z-10 hero-overlay pointer-events-none" />
         <div
           className={`absolute inset-0 sm:top-[250px] top-[150px] 
           lg:top-[150px] xl:top-[250px] ${styles.paddingX} 
-          max-w-7xl mx-auto flex flex-row items-start
+          max-w-7xl mx-auto flex flex-row items-start z-20
           justify-between gap-3`}
         >
           <div className="flex flex-col justify-center items-center mt-5 ml-3">
@@ -35,6 +36,9 @@ const Hero = () => {
           </div>
 
           <div>
+            <p className="text-[12px] sm:text-[14px] font-mova uppercase tracking-[0.35em] text-battleGray">
+              Efficiency-minded Engineer
+            </p>
             <h1
               className={`${styles.heroHeadText} text-eerieBlack font-poppins uppercase`}
             >
@@ -48,9 +52,23 @@ const Hero = () => {
               </span>
             </h1>
             <p className={`${styles.heroSubText} mt-2 text-eerieBlack`}>
-              I&apos;m an experienced software engineer working in the Toronto
-              area.
+              I&apos;m an experienced software engineer working in the Greater
+              Toronto Area area.
             </p>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <a
+                href="#projects"
+                className="hero-cta hero-cta-primary text-[12px] sm:text-[13px]"
+              >
+                View Projects
+              </a>
+              <a
+                href="#contact"
+                className="hero-cta hero-cta-secondary text-[12px] sm:text-[13px]"
+              >
+                Get In Touch
+              </a>
+            </div>
           </div>
           <div
             className="w-screen flex flex-col items-start 
