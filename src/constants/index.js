@@ -108,6 +108,7 @@ const experiences = [
   {
     title: 'Application Developer',
     company_name: 'InfoTRAC Solutions Inc',
+    company_url: 'https://www.infotracsolutions.com/',
     icon: resume,
     iconBg: '#333333',
     date: 'Jun 2003 - Feb 2006',
@@ -115,6 +116,7 @@ const experiences = [
   {
     title: 'Senior Engineer',
     company_name: 'Eloqua',
+    company_url: 'https://www.oracle.com/ca-en/cx/marketing/automation',
     icon: resume,
     iconBg: '#333333',
     date: 'Feb 2006 - Dec 2012',
@@ -122,6 +124,7 @@ const experiences = [
   {
     title: 'Principal Member of Technical Staff',
     company_name: 'Oracle',
+    company_url: 'https://www.oracle.com',
     icon: resume,
     iconBg: '#333333',
     date: 'Jan 2013 - Oct 2016',
@@ -129,6 +132,7 @@ const experiences = [
   {
     title: 'Staff Developer',
     company_name: 'Nudge',
+    company_url: 'https://nudge.ai',
     icon: resume,
     iconBg: '#333333',
     date: 'Oct 2016 - Mar 2020',
@@ -136,6 +140,7 @@ const experiences = [
   {
     title: 'Principal Engineer',
     company_name: 'Affinity',
+    company_url: 'https://affinity.co',
     icon: resume,
     iconBg: '#333333',
     date: 'Mar 2020 - Present',

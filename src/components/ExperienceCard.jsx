@@ -38,7 +38,13 @@ const ExperienceCard = ({ experience }) => (
         className="text-taupe text-[22px] font-semibold font-overcameBold tracking-[1px]"
         style={{ margin: 0 }}
       >
-        {experience.company_name}
+        {experience.company_url ? (
+          <a href={experience.company_url} className="inline-link">
+            {experience.company_name}
+          </a>
+        ) : (
+          experience.company_name
+        )}
       </p>
     </div>
   </VerticalTimelineElement>
@@ -47,6 +53,7 @@ const ExperienceCard = ({ experience }) => (
 ExperienceCard.propTypes = {
   experience: PropTypes.shape({
     company_name: PropTypes.string.isRequired,
+    company_url: PropTypes.string,
     title: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     icon: PropTypes.string.isRequired,

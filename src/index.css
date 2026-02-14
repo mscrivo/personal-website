@@ -239,6 +239,18 @@ body {
   width: 70%;
 }
 
+.inline-link {
+  color: #1f1f1f;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(41, 41, 41, 0.35);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.inline-link:hover {
+  color: #292929;
+  border-color: rgba(41, 41, 41, 0.8);
+}
+
 .nav-shell {
   background: rgba(244, 244, 246, 0.9);
   border-bottom: 1px solid rgba(41, 41, 41, 0.08);
