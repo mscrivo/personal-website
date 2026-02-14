@@ -40,7 +40,7 @@ const Hero = () => {
               Efficiency-minded Engineer
             </p>
             <h1
-              className={`${styles.heroHeadText} text-eerieBlack font-poppins uppercase`}
+              className={`${styles.heroHeadText} text-eerieBlack uppercase`}
             >
               Hi, I&apos;m{' '}
               <span

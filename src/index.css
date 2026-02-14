@@ -215,6 +215,9 @@
 
 body {
   overflow-x: hidden; /* Hide horizontal scrollbar */
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
 }
 
 * {
