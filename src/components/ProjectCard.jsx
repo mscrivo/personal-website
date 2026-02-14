@@ -1,130 +1,101 @@
-import { github, pineapple, pineappleHover } from '../assets'
+import { github, pineapple } from '../assets'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../utils/motion'
 import PropTypes from 'prop-types'
 
 const ProjectCard = ({
-  id,
   name,
   description,
   image,
   repo,
   demo,
+  tags = [],
+  featured = false,
   index,
-  active,
-  handleClick,
 }) => {
   return (
-    <motion.div
-      variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
-      className={`relative ${
-        active === id ? 'lg:flex-[3.5] flex-[10]' : 'lg:flex-[0.5] flex-[2]'
-      } flex items-center justify-center min-w-[170px] 
-        h-[420px] cursor-pointer card-shadow`}
-      onClick={() => handleClick(id)}
+    <motion.article
+      variants={fadeIn('up', 'spring', index * 0.25, 0.75)}
+      className="project-card group relative overflow-hidden rounded-[24px]"
     >
-      <div
-        className="absolute top-0 left-0 z-10 bg-jetLight 
-        h-full w-full opacity-[0.5] rounded-[24px]"
-      ></div>
+      <div className="relative h-[220px] w-full overflow-hidden">
+        <img
+          src={image}
+          alt={name}
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.05]"
+        />
+        <div className="project-image-overlay" />
+        {featured ? (
+          <span className="project-badge">Featured</span>
+        ) : null}
+      </div>
 
-      <img
-        src={image}
-        alt={name}
-        className="absolute w-full h-full object-cover rounded-[24px]"
-      />
-
-      {active !== id ? (
-        <div className="flex items-center justify-start pr-[4.5rem]">
-          <h3
-            className="font-extrabold font-beckman uppercase w-[200px] h-[30px] 
-          whitespace-nowrap sm:text-[27px] text-[18px] text-timberWolf tracking-[1px]
-          absolute z-0 lg:bottom-[7rem] lg:rotate-[-90deg] lg:origin-[0,0]
-          leading-none z-20"
-          >
+      <div className="flex flex-col gap-4 p-6">
+        <div>
+          <h3 className="text-[24px] sm:text-[28px] font-beckman uppercase text-timberWolf tracking-[1px]">
             {name}
           </h3>
+          <p className="mt-2 text-silver text-[14px] leading-[22px] font-poppins">
+            {description}
+          </p>
         </div>
-      ) : (
-        <>
-          <div
-            className="absolute bottom-0 p-8 justify-start w-full 
-              flex-col bg-[rgba(122,122,122,0.5)] rounded-b-[24px] z-20"
-          >
-            <div className="absolute inset-0 flex justify-end m-3">
-              <div
-                onClick={() => window.open(repo, '_blank')}
-                className="bg-night sm:w-11 sm:h-11 w-10 h-10 rounded-full 
-                    flex justify-center items-center cursor-pointer
-                    sm:opacity-[0.9] opacity-[0.8]"
-              >
-                <img
-                  src={github}
-                  alt="source code"
-                  className="w-4/5 h-4/5 object-contain"
-                />
-              </div>
-            </div>
 
-            <h2
-              className="font-bold sm:text-[32px] text-[24px] 
-                text-timberWolf uppercase font-beckman sm:mt-0 -mt-[1rem]"
-            >
-              {name}
-            </h2>
-            <p
-              className="text-silver sm:text-[14px] text-[12px] 
-                max-w-3xl sm:leading-[24px] leading-[18px]
-                font-poppins tracking-[1px]"
-            >
-              {description}
-            </p>
-            <button
-              className="live-demo flex justify-between 
-                sm:text-[16px] text-[14px] text-timberWolf 
-                font-bold font-beckman items-center py-5 pl-2 pr-3 
-                whitespace-nowrap gap-1 sm:w-[138px] sm:h-[50px] 
-                w-[125px] h-[46px] rounded-[10px] glassmorphism 
-                sm:mt-[22px] mt-[16px] hover:bg-battleGray 
-                hover:text-eerieBlack transition duration-[0.2s] 
-                ease-in-out"
-              onClick={() => window.open(demo, '_blank')}
-              onMouseOver={() => {
-                document
-                  .querySelector('.btn-icon')
-                  .setAttribute('src', pineappleHover)
-              }}
-              onMouseOut={() => {
-                document
-                  .querySelector('.btn-icon')
-                  .setAttribute('src', pineapple)
-              }}
+        {tags.length ? (
+          <div className="flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <span key={tag} className="project-tag">
+                {tag}
+              </span>
+            ))}
+          </div>
+        ) : null}
+
+        <div className="flex flex-wrap items-center gap-3">
+          {demo ? (
+            <a
+              href={demo}
+              target="_blank"
+              rel="noreferrer"
+              className="project-link project-link-primary"
             >
               <img
                 src={pineapple}
-                alt="pineapple"
-                className="btn-icon sm:w-[34px] sm:h-[34px] 
-                    w-[30px] h-[30px] object-contain"
+                alt="visit"
+                className="w-[20px] h-[20px] object-contain"
               />
-              Web Site
-            </button>
-          </div>
-        </>
-      )}
-    </motion.div>
+              Visit
+            </a>
+          ) : null}
+          {repo ? (
+            <a
+              href={repo}
+              target="_blank"
+              rel="noreferrer"
+              className="project-link project-link-ghost"
+            >
+              <img
+                src={github}
+                alt="source"
+                className="w-[18px] h-[18px] object-contain"
+              />
+              Source
+            </a>
+          ) : null}
+        </div>
+      </div>
+    </motion.article>
   )
 }
 
 ProjectCard.propTypes = {
-  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  repo: PropTypes.string.isRequired,
-  demo: PropTypes.string.isRequired,
+  repo: PropTypes.string,
+  demo: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string),
+  featured: PropTypes.bool,
   index: PropTypes.number.isRequired,
-  active: PropTypes.number.isRequired,
-  handleClick: PropTypes.func.isRequired,
 }
 
 export default ProjectCard

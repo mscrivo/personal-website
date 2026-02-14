@@ -279,6 +279,94 @@ body {
   border-radius: 24px;
 }
 
+.project-card {
+  background: rgba(20, 20, 20, 0.72);
+  border: 1px solid rgba(244, 244, 246, 0.12);
+  box-shadow: 0 24px 60px rgba(10, 10, 10, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 80px rgba(10, 10, 10, 0.35);
+  border-color: rgba(244, 244, 246, 0.3);
+}
+
+.project-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0) 0%,
+    rgba(10, 10, 10, 0.25) 45%,
+    rgba(10, 10, 10, 0.8) 100%
+  );
+}
+
+.project-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(244, 244, 246, 0.9);
+  color: #1f1f1f;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.project-tag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(244, 244, 246, 0.12);
+  color: #d6d6d6;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.project-link-primary {
+  background: rgba(244, 244, 246, 0.9);
+  color: #1f1f1f;
+  box-shadow: 0 10px 30px rgba(10, 10, 10, 0.25);
+}
+
+.project-link-primary img {
+  filter: brightness(0) saturate(100%);
+  opacity: 0.85;
+}
+
+.project-link-primary:hover {
+  transform: translateY(-2px);
+  background: rgba(244, 244, 246, 1);
+}
+
+.project-link-ghost {
+  background: rgba(20, 20, 20, 0.8);
+  color: #f4f4f6;
+  border: 1px solid rgba(244, 244, 246, 0.2);
+}
+
+.project-link-ghost:hover {
+  transform: translateY(-2px);
+  background: rgba(20, 20, 20, 0.95);
+}
+
 .black-gradient {
   background: #000000;
   background: -webkit-linear-gradient(to right, #434343, #000000);

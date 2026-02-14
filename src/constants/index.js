@@ -148,6 +148,8 @@ const projects = [
     name: 'Old Website',
     description: 'This was my old website circa 2000-2010 just for nostalgia.',
     image: oldsite,
+    tags: ['Nostalgia', 'HTML/CSS', 'Archive'],
+    featured: false,
     demo: 'https://michaelscrivo.com/old',
   },
   {
@@ -157,6 +159,8 @@ const projects = [
       'Outlook on the Desktop is a Windows application that keeps your Outlook calendar on your desktop.',
     image: ootd,
     repo: 'https://github.com/mscrivo/OotD',
+    tags: ['Windows', 'Productivity', '.NET'],
+    featured: true,
     demo: 'https://outlookonthedesktop.com',
   },
 ]
