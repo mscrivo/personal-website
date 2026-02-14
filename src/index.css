@@ -239,6 +239,30 @@ body {
   width: 70%;
 }
 
+.nav-shell {
+  background: rgba(244, 244, 246, 0.9);
+  border-bottom: 1px solid rgba(41, 41, 41, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-shell.nav-scrolled {
+  background: rgba(244, 244, 246, 0.82);
+  box-shadow: 0 10px 30px rgba(10, 10, 10, 0.12);
+}
+
+.nav-link {
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-link-active {
+  color: #1f1f1f;
+  background: rgba(41, 41, 41, 0.08);
+}
+
 .hero-heading {
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;

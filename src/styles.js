@@ -27,9 +27,9 @@ const styles = {
   sectionHeadTextLight:
     'text-timberWolf font-black font-mova tracking-[0.04em] md:text-[60px] sm:text-[48px] xs:text-[40px] text-[30px]',
   sectionSubText:
-    'sm:text-[14px] text-[12px] text-taupe uppercase tracking-[0.35em] font-semibold font-beckman',
+    'sm:text-[15px] text-[13px] text-taupe uppercase tracking-[0.25em] font-semibold font-beckman',
   sectionSubTextLight:
-    'sm:text-[14px] text-[12px] text-taupe uppercase tracking-[0.35em] font-semibold font-beckman',
+    'sm:text-[15px] text-[13px] text-taupe uppercase tracking-[0.25em] font-semibold font-beckman',
 }
 
 export { styles }
