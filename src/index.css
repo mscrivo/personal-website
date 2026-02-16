@@ -148,7 +148,10 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .hero-cta:focus-visible {
@@ -253,7 +256,9 @@ body {
   color: #1f1f1f;
   text-decoration: none;
   border-bottom: 1px solid rgba(41, 41, 41, 0.35);
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .inline-link:hover {
@@ -266,7 +271,9 @@ body {
   border-bottom: 1px solid rgba(41, 41, 41, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: background 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .nav-shell.nav-scrolled {
@@ -277,7 +284,9 @@ body {
 .nav-link {
   padding: 6px 12px;
   border-radius: 999px;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .nav-link-active {
@@ -332,7 +341,10 @@ body {
   background: rgba(20, 20, 20, 0.72);
   border: 1px solid rgba(244, 244, 246, 0.12);
   box-shadow: 0 24px 60px rgba(10, 10, 10, 0.28);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border 0.2s ease;
 }
 
 .project-card:hover {
@@ -386,7 +398,10 @@ body {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .project-link-primary {

@@ -25,7 +25,7 @@ const Hero = () => {
       >
         <div className="absolute inset-0 z-10 hero-overlay pointer-events-none" />
         <div
-          className={`absolute inset-0 sm:top-[250px] top-[150px] 
+          className={`absolute inset-0 sm:top-[250px] top-[130px] 
           lg:top-[150px] xl:top-[250px] ${styles.paddingX} 
           max-w-7xl mx-auto flex flex-col sm:flex-row items-start z-20
           justify-between gap-3`}
@@ -39,9 +39,7 @@ const Hero = () => {
             <p className="text-[12px] sm:text-[14px] font-mova uppercase tracking-[0.35em] text-battleGray">
               Efficiency-minded Engineer
             </p>
-            <h1
-              className={`${styles.heroHeadText} text-eerieBlack uppercase`}
-            >
+            <h1 className={`${styles.heroHeadText} text-eerieBlack uppercase`}>
               Hi, I&apos;m{' '}
               <span
                 className="sm:text-battleGray sm:text-[90px] 
