@@ -1,7 +1,9 @@
-import { github, pineapple } from '../assets'
 import { motion } from 'framer-motion'
-import { fadeIn } from '../utils/motion'
 import PropTypes from 'prop-types'
+
+import { github, pineapple } from '../assets'
+import { fadeIn } from '../utils/motion'
+
 
 const ProjectCard = ({
   name,

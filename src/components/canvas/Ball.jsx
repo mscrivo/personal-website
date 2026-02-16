@@ -1,6 +1,4 @@
 /* eslint-disable react/no-unknown-property */
-import { Suspense, useState } from 'react'
-import { Canvas } from '@react-three/fiber'
 import {
   Decal,
   Float,
@@ -9,7 +7,10 @@ import {
   useTexture,
   Html,
 } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 import PropTypes from 'prop-types'
+import { Suspense, useState } from 'react'
+
 import Loader from '../Loader'
 
 const Ball = ({ imgUrl, hoverText }) => {

@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
+
+import { projects } from '../constants'
 import { SectionWrapper } from '../hoc'
 import { styles } from '../styles'
-import { projects } from '../constants'
 import { fadeIn, textVariant, staggerContainer } from '../utils/motion'
+
 import ProjectCard from './ProjectCard'
 
 const Projects = () => {

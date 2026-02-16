@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { styles } from '../styles'
-import { navLinks } from '../constants'
+
 import { close, menu, logo, logotext } from '../assets'
+import { navLinks } from '../constants'
+import { styles } from '../styles'
 
 const Navbar = () => {
   const [active, setActive] = useState('')
@@ -57,9 +58,13 @@ const Navbar = () => {
                 active === nav.title ? 'nav-link-active' : 'text-eerieBlack'
               } hover:text-taupe text-[21px] font-medium font-mova 
                 uppercase tracking-[3px] cursor-pointer nav-links nav-link`}
-              onClick={() => setActive(nav.title)}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a
+                href={`#${nav.id}`}
+                onClick={() => setActive(nav.title)}
+              >
+                {nav.title}
+              </a>
             </li>
           ))}
         </ul>
@@ -74,12 +79,18 @@ const Navbar = () => {
                 }`}
             >
               <div className="flex justify-end">
-                <img
-                  src={close}
-                  alt="close"
-                  className="w-[22px] h-[22px] object-contain cursor-pointer"
+                <button
+                  type="button"
+                  aria-label="Close menu"
+                  className="w-[22px] h-[22px]"
                   onClick={() => setToggle(!toggle)}
-                />
+                >
+                  <img
+                    src={close}
+                    alt=""
+                    className="w-[22px] h-[22px] object-contain"
+                  />
+                </button>
               </div>
               <ul
                 className="list-none flex flex-col gap-6 
@@ -93,23 +104,33 @@ const Navbar = () => {
                       active === nav.title ? 'text-french' : 'text-eerieBlack'
                     } text-[48px] font-medium font-mova 
                       uppercase tracking-[1px] cursor-pointer`}
-                    onClick={() => {
-                      setToggle(!toggle)
-                      setActive(nav.title)
-                    }}
                   >
-                    <a href={`#${nav.id}`}>{nav.title}</a>
+                    <a
+                      href={`#${nav.id}`}
+                      onClick={() => {
+                        setToggle(!toggle)
+                        setActive(nav.title)
+                      }}
+                    >
+                      {nav.title}
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
           ) : (
-            <img
-              src={menu}
-              alt="menu"
-              className="w-[34px] h-[34px] object-contain cursor-pointer"
+            <button
+              type="button"
+              aria-label="Open menu"
+              className="w-[34px] h-[34px]"
               onClick={() => setToggle(!toggle)}
-            />
+            >
+              <img
+                src={menu}
+                alt=""
+                className="w-[34px] h-[34px] object-contain"
+              />
+            </button>
           )}
         </div>
       </div>

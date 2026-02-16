@@ -1,12 +1,12 @@
+import About from './About'
 import { BallCanvas } from './canvas'
+import Contact from './Contact'
+import Experience from './Experience'
+import Footer from './Footer'
 import Hero from './Hero'
 import Navbar from './Navbar'
-import About from './About'
-import Tech from './Tech'
-import Experience from './Experience'
 import Projects from './Projects'
-import Contact from './Contact'
-import Footer from './Footer'
+import Tech from './Tech'
 
 export {
   Hero,

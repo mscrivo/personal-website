@@ -1,5 +1,5 @@
-import { VerticalTimelineElement } from 'react-vertical-timeline-component'
 import PropTypes from 'prop-types'
+import { VerticalTimelineElement } from 'react-vertical-timeline-component'
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement

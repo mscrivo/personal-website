@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
-import { fadeIn } from '../utils/motion'
 import PropTypes from 'prop-types'
+
+import { fadeIn } from '../utils/motion'
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
