@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <nav
       className={`${styles.paddingX} w-full flex items-center py-2 fixed 
-      top-0 z-20 sm:opacity-[0.97] xxs:h-[12vh] nav-shell ${
+      top-0 z-50 sm:opacity-[0.97] xxs:h-[12vh] nav-shell ${
         scrolled ? 'nav-scrolled' : ''
       }`}
     >
@@ -68,8 +68,8 @@ const Navbar = () => {
         <div className="sm:hidden flex flex-1 w-screen justify-end items-center">
           {toggle ? (
             <div
-              className={`p-6 bg-flashWhite opacity-[0.98] absolute 
-                top-0 left-0 w-screen h-[100vh] z-10 menu ${
+              className={`p-6 bg-flashWhite fixed 
+                inset-0 w-screen h-[100svh] z-[80] menu ${
                   toggle ? 'menu-open' : 'menu-close'
                 }`}
             >
@@ -82,8 +82,8 @@ const Navbar = () => {
                 />
               </div>
               <ul
-                className="list-none flex flex-col -gap-[1rem] 
-                items-start justify-end mt-[5rem]"
+                className="list-none flex flex-col gap-6 
+                items-start justify-start mt-[5rem] max-h-[70vh] overflow-y-auto"
               >
                 {navLinks.map((nav) => (
                   <li
