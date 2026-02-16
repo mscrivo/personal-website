@@ -27,15 +27,15 @@ const Hero = () => {
         <div
           className={`absolute inset-0 sm:top-[250px] top-[150px] 
           lg:top-[150px] xl:top-[250px] ${styles.paddingX} 
-          max-w-7xl mx-auto flex flex-row items-start z-20
+          max-w-7xl mx-auto flex flex-col sm:flex-row items-start z-20
           justify-between gap-3`}
         >
-          <div className="flex flex-col justify-center items-center mt-5 ml-3">
-            <div className="w-5 h-5 rounded-full bg-[#0a0a0a] sm:hidden" />
-            <div className="w-1 sm:h-80 h-40 bw-gradient sm:hidden" />
+          <div className="flex flex-col justify-center items-center mt-5 ml-3 hidden sm:flex">
+            <div className="w-5 h-5 rounded-full bg-[#0a0a0a]" />
+            <div className="w-1 sm:h-80 h-40 bw-gradient" />
           </div>
 
-          <div>
+          <div className="hero-text-panel">
             <p className="text-[12px] sm:text-[14px] font-mova uppercase tracking-[0.35em] text-battleGray">
               Efficiency-minded Engineer
             </p>
@@ -71,15 +71,13 @@ const Hero = () => {
             </div>
           </div>
           <div
-            className="w-screen flex flex-col items-start 
+            className="hidden sm:flex w-screen items-start 
             justify-center sm:-ml-[3rem] xxs:mt-4"
           ></div>
-
-          <div></div>
         </div>
 
         <div
-          className="absolute xs:bottom-10 bottom-32 w-full 
+          className="absolute bottom-4 w-full 
           flex justify-center items-center"
         >
           <a href="#about">
