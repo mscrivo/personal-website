@@ -84,6 +84,15 @@ This will generate a production-ready build in the dist directory.
 
 This project is configured with GitHub Actions for CI/CD. Pushing to the main branch will trigger the build workflow defined in build.yml.
 
+## Linting and Formatting
+
+```sh
+npm run lint
+npm run lint-fix
+npm run format
+npm run format:check
+```
+
 ## Customization
 
 - Update content in the index.js file to change project details, work experience, etc.
