@@ -22,7 +22,7 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.13.0",
     "react-vertical-timeline-component": "^4.0.0",
-    "three": "^0.182.0",
+    "three": "^0.183.1",
     "use": "^3.1.1"
   },
   "overrides": {
