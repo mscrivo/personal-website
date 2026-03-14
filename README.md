@@ -31,7 +31,6 @@ This portfolio website showcases professional experience, technical skills, and 
 ```sh
 📦 personal-website
 ├── .github                # GitHub-specific files (workflows, dependabot config)
-├── public                 # Static files
 └── src                    # Source code
     ├── assets             # Images, icons, and other assets
     ├── components         # React components
@@ -46,7 +45,7 @@ This portfolio website showcases professional experience, technical skills, and 
 
 ### Prerequisites
 
-- Node.js (v18 or later recommended)
+- Node.js (v22 recommended, v18+ may work)
 - npm or yarn
 
 ### Installation
@@ -54,7 +53,7 @@ This portfolio website showcases professional experience, technical skills, and 
 1. Clone the repository
 
    ```sh
-   git clone https://github.com/yourusername/personal-website.git
+   git clone https://github.com/mscrivo/personal-website.git
    cd personal-website
    ```
 
@@ -80,6 +79,14 @@ npm run build
 
 This will generate a production-ready build in the dist directory.
 
+## Preview Production Build
+
+```sh
+npm run preview
+```
+
+This serves the production build locally for final checks.
+
 ## Deployment
 
 This project is configured with GitHub Actions for CI/CD. Pushing to the main branch will trigger the build workflow defined in build.yml.
@@ -95,9 +102,9 @@ npm run format:check
 
 ## Customization
 
-- Update content in the index.js file to change project details, work experience, etc.
-- Replace images in the assets directory
-- Modify the styling by editing Tailwind configuration in tailwind.config.cjs
+- Update content in src/constants/index.js to change project details, work experience, and skills.
+- Replace images and icons in src/assets.
+- Modify global styling in src/index.css and PostCSS behavior in postcss.config.js.
 
 ## Credits
 
@@ -106,4 +113,4 @@ npm run format:check
 
 ## License
 
-This project is licensed under the MIT License
+This project is licensed under the MIT License. See the LICENSE file for details.
