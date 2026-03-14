@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
+import { useEffect, useMemo, useState } from 'react'
 
 import { bwmap } from '../assets'
 import { styles } from '../styles'
@@ -80,34 +80,28 @@ const moodPreviewHours = {
 }
 
 const Hero = () => {
-  const [mood, setMood] = useState(() => getMoodByHour(new Date().getHours()))
+  const [currentHour, setCurrentHour] = useState(() => new Date().getHours())
   const [scrollProgress, setScrollProgress] = useState(0)
   const [moodOverride, setMoodOverride] = useState(null)
 
   useEffect(() => {
     if (moodOverride !== null) {
-      return undefined
+      return
     }
 
-    const updateMood = () => {
-      setMood(getMoodByHour(new Date().getHours()))
-    }
-
-    updateMood()
-    const timer = window.setInterval(updateMood, 60000)
+    const timer = window.setInterval(() => {
+      setCurrentHour(new Date().getHours())
+    }, 60000)
 
     return () => {
       window.clearInterval(timer)
     }
   }, [moodOverride])
 
-  useEffect(() => {
-    if (moodOverride === null) {
-      return
-    }
-
-    setMood(getMoodByHour(moodOverride))
-  }, [moodOverride])
+  const mood = useMemo(
+    () => getMoodByHour(moodOverride ?? currentHour),
+    [moodOverride, currentHour]
+  )
 
   useEffect(() => {
     const handleScroll = () => {
@@ -216,7 +210,10 @@ const Hero = () => {
                 })}
                 <button
                   type="button"
-                  onClick={() => setMoodOverride(null)}
+                  onClick={() => {
+                    setCurrentHour(new Date().getHours())
+                    setMoodOverride(null)
+                  }}
                   className={`dev-mood-btn ${
                     moodOverride === null ? 'is-active' : ''
                   }`}
