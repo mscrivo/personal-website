@@ -222,13 +222,6 @@ const Hero = () => {
                 </button>
               </div>
             ) : null}
-            <div className="mood-chip mb-3" aria-live="polite">
-              <span
-                className="h-2.5 w-2.5 rounded-full"
-                style={{ background: mood.pulse }}
-              />
-              <span>Mood: {mood.label}</span>
-            </div>
             <p className="text-[12px] sm:text-[14px] font-mova uppercase tracking-[0.35em] text-battleGray">
               Efficiency-minded Engineer
             </p>
