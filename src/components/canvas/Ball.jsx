@@ -1,12 +1,10 @@
 /* eslint-disable react/no-unknown-property */
-import {
-  Decal,
-  Float,
-  OrbitControls,
-  Preload,
-  useTexture,
-  Html,
-} from '@react-three/drei'
+import { Decal } from '@react-three/drei/core/Decal'
+import { Float } from '@react-three/drei/core/Float'
+import { OrbitControls } from '@react-three/drei/core/OrbitControls'
+import { Preload } from '@react-three/drei/core/Preload'
+import { useTexture } from '@react-three/drei/core/Texture'
+import { Html } from '@react-three/drei/web/Html'
 import { Canvas } from '@react-three/fiber'
 import PropTypes from 'prop-types'
 import { Suspense, useState } from 'react'
