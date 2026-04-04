@@ -46,7 +46,7 @@ This portfolio website showcases professional experience, technical skills, and 
 ### Prerequisites
 
 - Node.js (v22 recommended, v18+ may work)
-- npm or yarn
+- pnpm
 
 ### Installation
 
@@ -60,13 +60,13 @@ This portfolio website showcases professional experience, technical skills, and 
 2. Install dependencies
 
    ```sh
-   npm install
+   pnpm install
    ```
 
 3. Start development server
 
    ```sh
-   npm run dev
+   pnpm run dev
    ```
 
 4. Open your browser and navigate to `http://localhost:5173`
@@ -74,7 +74,7 @@ This portfolio website showcases professional experience, technical skills, and 
 ## Building for Production
 
 ```sh
-npm run build
+pnpm run build
 ```
 
 This will generate a production-ready build in the dist directory.
@@ -82,7 +82,7 @@ This will generate a production-ready build in the dist directory.
 ## Preview Production Build
 
 ```sh
-npm run preview
+pnpm run preview
 ```
 
 This serves the production build locally for final checks.
@@ -94,10 +94,10 @@ This project is configured with GitHub Actions for CI/CD. Pushing to the main br
 ## Linting and Formatting
 
 ```sh
-npm run lint
-npm run lint-fix
-npm run format
-npm run format:check
+pnpm run lint
+pnpm run lint-fix
+pnpm run format
+pnpm run format:check
 ```
 
 ## Customization

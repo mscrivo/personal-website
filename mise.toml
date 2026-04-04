@@ -1,8 +1,8 @@
 [tasks.dev]
-run = ["npm i", "npm run dev"]
+run = ["pnpm install", "pnpm run dev"]
 
 [tasks.build]
-run = ["npm run build"]
+run = ["pnpm run build"]
 
 [tasks.lint]
-run = ["npm run lint"]
+run = ["pnpm run lint"]
