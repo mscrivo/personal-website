@@ -42,6 +42,9 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1
     devDependencies:
+      '@eslint/js':
+        specifier: ^9.39.4
+        version: 9.39.4
       '@react-three/eslint-plugin':
         specifier: ^0.1.2
         version: 0.1.2
@@ -58,7 +61,7 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1(vite@8.0.3(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(jiti@2.6.1))
       eslint:
-        specifier: ^9.39.2
+        specifier: ^9.39.4
         version: 9.39.4(jiti@2.6.1)
       eslint-plugin-eslint-comments:
         specifier: ^3.2.0
