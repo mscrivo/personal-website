@@ -5,7 +5,6 @@ import { SectionWrapper } from '../hoc'
 import { styles } from '../styles'
 import { slideIn } from '../utils/motion'
 
-
 const Contact = () => {
   return (
     <div className="-mt-[8rem] xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">

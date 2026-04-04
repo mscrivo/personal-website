@@ -100,7 +100,7 @@ const Hero = () => {
 
   const mood = useMemo(
     () => getMoodByHour(moodOverride ?? currentHour),
-    [moodOverride, currentHour]
+    [moodOverride, currentHour],
   )
 
   useEffect(() => {
@@ -120,7 +120,7 @@ const Hero = () => {
   const splitPoint = useMemo(() => 62 - scrollProgress * 10, [scrollProgress])
   const overlayOpacity = useMemo(
     () => 0.78 + scrollProgress * 0.16,
-    [scrollProgress]
+    [scrollProgress],
   )
 
   const sectionStyle = useMemo(
@@ -128,7 +128,7 @@ const Hero = () => {
       backgroundImage: `linear-gradient(132deg, ${hexToRgba(mood.base, 0.62)} 0%, ${hexToRgba(mood.mid, 0.54)} ${splitPoint}%, ${hexToRgba(mood.deep, 0.8)} 100%)`,
       transition: 'background-image 700ms ease',
     }),
-    [mood, splitPoint]
+    [mood, splitPoint],
   )
 
   const overlayStyle = useMemo(
@@ -137,7 +137,7 @@ const Hero = () => {
       opacity: overlayOpacity,
       transition: 'background 700ms ease, opacity 250ms ease',
     }),
-    [mood, overlayOpacity]
+    [mood, overlayOpacity],
   )
 
   return (
@@ -192,7 +192,11 @@ const Hero = () => {
 
           <div className="hero-text-panel">
             {import.meta.env.DEV ? (
-              <div className="dev-mood-switcher" role="group" aria-label="Mood tester">
+              <div
+                className="dev-mood-switcher"
+                role="group"
+                aria-label="Mood tester"
+              >
                 <span className="dev-mood-label">Mood Tester</span>
                 {Object.entries(moodPreviewHours).map(([label, hour]) => {
                   const isActive = mood.label === label

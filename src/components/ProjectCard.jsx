@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { github, pineapple } from '../assets'
 import { fadeIn } from '../utils/motion'
 
-
 const ProjectCard = ({
   name,
   description,
