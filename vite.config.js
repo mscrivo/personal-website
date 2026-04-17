@@ -33,7 +33,7 @@ export default defineConfig({
             return 'react-three-drei'
           }
 
-          if (normalizedId.includes('/node_modules/framer-motion/')) {
+          if (normalizedId.includes('/node_modules/motion/')) {
             return 'motion'
           }
 

@@ -1,6 +1,6 @@
 import js from '@eslint/js'
+import eslintCommentsPlugin from '@eslint-community/eslint-plugin-eslint-comments'
 import reactThreePlugin from '@react-three/eslint-plugin'
-import eslintCommentsPlugin from 'eslint-plugin-eslint-comments'
 import importPlugin from 'eslint-plugin-import'
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 import reactPlugin from 'eslint-plugin-react'
