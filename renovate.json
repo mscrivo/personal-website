@@ -9,5 +9,16 @@
   "platformAutomerge": true,
   "postUpdateOptions": [
     "pnpmDedupe"
+  ],
+  "packageRules": [
+    {
+      "groupName": "react packages",
+      "matchPackageNames": [
+        "react",
+        "react-dom",
+        "@types/react",
+        "@types/react-dom"
+      ]
+    }
   ]
 }
