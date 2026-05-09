@@ -1,2 +1,2 @@
-ignoredBuiltDependencies:
-  - sharp
+allowBuilds:
+  sharp: true
