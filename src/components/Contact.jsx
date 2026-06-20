@@ -15,7 +15,7 @@ const Contact = () => {
         <p className={styles.sectionHeadTextLight}>Get in touch</p>
         <span className={`${styles.sectionSubText} flex items-center gap-2`}>
           <MdEmail className="text-[24px]" />
-          mscrivo + @gmail.com
+          mscrivo [at] gmail [dot] com
         </span>
         <span className={`${styles.sectionSubText} flex items-center gap-2`}>
           {' '}
