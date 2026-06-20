@@ -2,9 +2,9 @@ name: Build & Deploy
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
   pull_request:
-    branches: ["main"]
+    branches: ['main']
 
 jobs:
   build:
@@ -22,6 +22,7 @@ jobs:
             ${{ runner.os }}-pnpm-
       - run: pnpm install --frozen-lockfile
       - run: pnpm run lint
+      - run: pnpm run format:check
       - run: pnpm run build
       - name: Upload built site
         uses: actions/upload-artifact@v7
