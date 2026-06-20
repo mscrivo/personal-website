@@ -20,7 +20,11 @@ const Ball = ({ imgUrl, hoverText }) => {
           than lighting that spins along with the mesh. */}
       <ambientLight intensity={0.45} />
       <directionalLight position={[4, 5, 6]} intensity={1.6} />
-      <directionalLight position={[-4, -2, 2]} intensity={0.5} color="#88aaff" />
+      <directionalLight
+        position={[-4, -2, 2]}
+        intensity={0.5}
+        color="#88aaff"
+      />
       <Float speed={2.5} rotationIntensity={1} floatIntensity={2}>
         <mesh
           castShadow

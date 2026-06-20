@@ -1,12 +1,5 @@
 import { motion } from 'motion/react'
-import {
-  createRef,
-  lazy,
-  Suspense,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import { createRef, lazy, Suspense, useEffect, useRef, useState } from 'react'
 
 import { technologies } from '../constants'
 import { SectionWrapper } from '../hoc'
