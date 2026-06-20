@@ -1,3 +1,8 @@
 dist
 node_modules
 .vscode/settings.json
+
+# Playwright
+test-results
+playwright-report
+playwright/.cache

@@ -89,4 +89,13 @@ export default [
       'import/no-unresolved': 'off',
     },
   },
+  {
+    files: ['tests/**/*.js', 'playwright.config.js'],
+    languageOptions: {
+      globals: { ...globals.node },
+    },
+    rules: {
+      'import/no-unresolved': 'off',
+    },
+  },
 ]
