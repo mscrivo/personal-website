@@ -89,7 +89,20 @@ This serves the production build locally for final checks.
 
 ## Deployment
 
-This project is configured with GitHub Actions for CI/CD. Pushing to the main branch will trigger the build workflow defined in build.yml.
+Pushes to `main` are automatically deployed to the server via the GitHub Actions workflow in `.github/workflows/build.yml`:
+
+1. **Build** — install deps, `lint`, `format:check`, then `pnpm run build` (output in `dist/`), uploaded as an artifact.
+2. **Deploy** (only on `main`, after the build passes) — `rsync`s `dist/` over SSH into a timestamped release directory on the server (`.../site/releases/<commit-sha>/`), then atomically repoints a `current` symlink at it. The last 5 releases are kept for instant rollback.
+
+The web server (Caddy) serves the `current` symlink, so a deploy goes live the moment the symlink is swapped — no restart needed. Because each push deploys, a broken build never reaches production: the deploy only runs if `lint`, `format:check`, and `build` all succeed.
+
+Deployment requires these repository secrets: `SSH_HOST`, `SSH_USER`, `SSH_KEY`, and `DEPLOY_PATH` (optionally `SSH_PORT`).
+
+To roll back, repoint `current` at a previous release on the server:
+
+```sh
+ln -sfn releases/<old-sha> current.tmp && mv -T current.tmp current
+```
 
 ## Linting and Formatting
 
