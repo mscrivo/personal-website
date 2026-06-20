@@ -1,11 +1,13 @@
 import { motion } from 'motion/react'
+import { lazy, Suspense } from 'react'
 
 import { technologies } from '../constants'
 import { SectionWrapper } from '../hoc'
 import { styles } from '../styles'
 import { textVariant } from '../utils/motion'
 
-import { BallCanvas } from './canvas'
+// Defer the Three.js bundle until the tech section mounts.
+const BallCanvas = lazy(() => import('./canvas/Ball'))
 
 const Tech = () => {
   return (
@@ -18,7 +20,9 @@ const Tech = () => {
       <div className="flex flex-wrap justify-center gap-10 mt-14">
         {technologies.map((technology) => (
           <div className="w-28 h-28" key={technology.name}>
-            <BallCanvas name={technology.name} icon={technology.icon} />
+            <Suspense fallback={null}>
+              <BallCanvas name={technology.name} icon={technology.icon} />
+            </Suspense>
           </div>
         ))}
       </div>
