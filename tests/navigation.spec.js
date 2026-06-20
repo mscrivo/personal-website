@@ -7,7 +7,9 @@ test('desktop shows nav links and hides the hamburger', async ({
 
   await page.goto('/')
   for (const label of ['About', 'Projects', 'Experience', 'Contact']) {
-    await expect(page.getByRole('link', { name: label, exact: true })).toBeVisible()
+    await expect(
+      page.getByRole('link', { name: label, exact: true }),
+    ).toBeVisible()
   }
   await expect(page.getByRole('button', { name: 'Open menu' })).toBeHidden()
 })
