@@ -62,7 +62,7 @@
     "prettier": "^3.8.2",
     "tailwindcss": "^4.2.1",
     "vite": "^8.0.8",
-    "vite-imagetools": "10.0.0",
+    "vite-imagetools": "10.0.1",
     "vite-plugin-favicons-inject": "^2.2.0"
   }
 }
