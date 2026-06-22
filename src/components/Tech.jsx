@@ -15,6 +15,10 @@ const Tech = () => {
   // Stable ref per grid cell; the single canvas scissors a <View> to each one.
   const [cellRefs] = useState(() => technologies.map(() => createRef()))
   const [inView, setInView] = useState(false)
+  // Index of the ball currently hovered; drives the DOM tooltip below. The
+  // tooltip lives in the DOM (not a drei <Html>) because <Html> positions
+  // against the full canvas, not the View's scissor, so it lands way off.
+  const [hoveredIndex, setHoveredIndex] = useState(null)
 
   // Only mount the (expensive) WebGL canvas while the grid is on screen, so the
   // always-on render loop doesn't burn CPU when the section is out of view.
@@ -40,10 +44,16 @@ const Tech = () => {
       <div ref={gridRef} className="flex flex-wrap justify-center gap-10 mt-14">
         {technologies.map((technology, index) => (
           <div
-            className="w-28 h-28"
+            className="relative w-28 h-28"
             key={technology.name}
             ref={cellRefs[index]}
-          />
+          >
+            {hoveredIndex === index && (
+              <div className="absolute left-1/2 -top-2 z-10 -translate-x-1/2 -translate-y-full whitespace-nowrap rounded bg-black/75 p-2 text-white pointer-events-none">
+                {technology.name}
+              </div>
+            )}
+          </div>
         ))}
       </div>
 
@@ -53,6 +63,7 @@ const Tech = () => {
             technologies={technologies}
             cellRefs={cellRefs}
             eventSource={containerRef}
+            onHover={setHoveredIndex}
           />
         </Suspense>
       )}

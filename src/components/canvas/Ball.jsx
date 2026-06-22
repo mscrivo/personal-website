@@ -3,14 +3,12 @@ import { Decal } from '@react-three/drei/core/Decal'
 import { Float } from '@react-three/drei/core/Float'
 import { Preload } from '@react-three/drei/core/Preload'
 import { useTexture } from '@react-three/drei/core/Texture'
-import { Html } from '@react-three/drei/web/Html'
 import { View } from '@react-three/drei/web/View'
 import { Canvas } from '@react-three/fiber'
 import PropTypes from 'prop-types'
-import { Suspense, useState } from 'react'
+import { Suspense } from 'react'
 
-const Ball = ({ imgUrl, hoverText }) => {
-  const [hovered, setHovered] = useState(false)
+const Ball = ({ imgUrl, onHoverChange }) => {
   const [decal] = useTexture([imgUrl])
 
   return (
@@ -30,8 +28,8 @@ const Ball = ({ imgUrl, hoverText }) => {
           castShadow
           receiveShadow
           scale={2.75}
-          onPointerOver={() => setHovered(true)}
-          onPointerOut={() => setHovered(false)}
+          onPointerOver={() => onHoverChange(true)}
+          onPointerOut={() => onHoverChange(false)}
         >
           <icosahedronGeometry args={[1, 2]} />
           <meshStandardMaterial
@@ -48,13 +46,6 @@ const Ball = ({ imgUrl, hoverText }) => {
             flatShading
             map={decal}
           />
-          {hovered && (
-            <Html position={[0, 1, 0]} center>
-              <div className="p-2 bg-black/75 text-white rounded">
-                {hoverText}
-              </div>
-            </Html>
-          )}
         </mesh>
       </Float>
     </>
@@ -64,7 +55,7 @@ const Ball = ({ imgUrl, hoverText }) => {
 // A single WebGL context renders every ball. Each ball is a <View> scissored to
 // its tracked grid cell, so the DOM flexbox grid keeps driving the (responsive)
 // layout while we avoid spinning up one canvas/context per icon.
-const BallCanvas = ({ technologies, cellRefs, eventSource }) => {
+const BallCanvas = ({ technologies, cellRefs, eventSource, onHover }) => {
   return (
     <Canvas
       frameloop="always"
@@ -75,7 +66,10 @@ const BallCanvas = ({ technologies, cellRefs, eventSource }) => {
       <Suspense fallback={null}>
         {technologies.map((technology, index) => (
           <View key={technology.name} track={cellRefs[index]}>
-            <Ball imgUrl={technology.icon} hoverText={technology.name} />
+            <Ball
+              imgUrl={technology.icon}
+              onHoverChange={(hovered) => onHover(hovered ? index : null)}
+            />
           </View>
         ))}
         <Preload all />
@@ -87,7 +81,7 @@ const BallCanvas = ({ technologies, cellRefs, eventSource }) => {
 
 Ball.propTypes = {
   imgUrl: PropTypes.string.isRequired,
-  hoverText: PropTypes.string.isRequired,
+  onHoverChange: PropTypes.func.isRequired,
 }
 
 BallCanvas.propTypes = {
@@ -102,6 +96,7 @@ BallCanvas.propTypes = {
   ).isRequired,
   eventSource: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
     .isRequired,
+  onHover: PropTypes.func.isRequired,
 }
 
 export default BallCanvas
