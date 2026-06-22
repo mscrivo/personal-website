@@ -1,5 +1,7 @@
 import { motion } from 'motion/react'
+import { FaLinkedin } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
+import { SiBluesky, SiKeybase } from 'react-icons/si'
 
 import { SectionWrapper } from '../hoc'
 import { styles } from '../styles'
@@ -18,9 +20,21 @@ const Contact = () => {
           mscrivo [at] gmail [dot] com
         </span>
         <span className={`${styles.sectionSubText} flex items-center gap-2`}>
-          {' '}
-          or on
+          <FaLinkedin className="text-[24px]" />
           <a href="https://www.linkedin.com/in/michaelscrivo/">LinkedIn</a>
+        </span>
+        <span className={`${styles.sectionSubText} flex items-center gap-2`}>
+          <SiKeybase className="text-[24px]" />
+          <a href="https://keybase.io/mscrivo">Keybase</a>
+        </span>
+        <span className={`${styles.sectionSubText} flex items-center gap-2`}>
+          <SiBluesky className="text-[24px]" />
+          <a
+            href="https://bsky.app/profile/michaelscrivo.com"
+            className="font-sans"
+          >
+            @michaelscrivo.com
+          </a>
         </span>
       </motion.div>
     </div>
