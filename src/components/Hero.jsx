@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { useEffect, useMemo, useState } from 'react'
 
 import { bwmap } from '../assets'
@@ -260,8 +260,8 @@ const Hero = () => {
         </div>
 
         <div
-          className="absolute bottom-4 w-full 
-          flex justify-center items-center"
+          className="absolute bottom-4 w-full
+          hidden sm:flex justify-center items-center"
         >
           <a href="#about">
             <div
@@ -269,7 +269,7 @@ const Hero = () => {
             border-french border-dim flex
             justify-center items-start p-2"
             >
-              <motion.div
+              <m.div
                 animate={{
                   y: [0, 24, 0],
                 }}

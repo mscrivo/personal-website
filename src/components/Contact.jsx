@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { FaLinkedin } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import { SiBluesky, SiKeybase } from 'react-icons/si'
@@ -10,7 +10,7 @@ import { slideIn } from '../utils/motion'
 const Contact = () => {
   return (
     <div className="-mt-[8rem] flex flex-col items-center justify-center gap-10 overflow-hidden">
-      <motion.div
+      <m.div
         variants={slideIn('left', 'tween', 0.2, 1)}
         className="w-full max-w-2xl bg-jet p-8 rounded-2xl space-y-4"
       >
@@ -46,7 +46,7 @@ const Contact = () => {
             @michaelscrivo.com
           </a>
         </span>
-      </motion.div>
+      </m.div>
     </div>
   )
 }

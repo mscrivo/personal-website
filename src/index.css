@@ -51,19 +51,19 @@
 
 @font-face {
   font-family: 'Mova';
-  src: url('./fonts/mova.otf');
+  src: url('./fonts/mova.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Beckman';
-  src: url('./fonts/beckman.otf');
+  src: url('./fonts/beckman.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Overcame Bold';
-  src: url('./fonts/overcame-bold.woff');
+  src: url('./fonts/overcame-bold.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -79,7 +79,7 @@
       rgba(244, 244, 246, 0.5) 60%,
       rgba(10, 10, 10, 0.2) 100%
     ),
-    url('/src/assets/backgrounds/white-abstract.png');
+    url('/src/assets/backgrounds/white-abstract.webp');
 }
 
 .bg-experienceLight {

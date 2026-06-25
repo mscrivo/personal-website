@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { createRef, lazy, Suspense, useEffect, useRef, useState } from 'react'
 
 import { technologies } from '../constants'
@@ -31,10 +31,10 @@ const Tech = () => {
 
   return (
     <div>
-      <motion.div variants={textVariant()}>
+      <m.div variants={textVariant()}>
         <p className={styles.sectionSubTextLight}>My skills</p>
         <h2 className={styles.sectionHeadTextLight}>Technologies.</h2>
-      </motion.div>
+      </m.div>
 
       <div ref={gridRef} className="flex flex-wrap justify-center gap-10 mt-14">
         {technologies.map((technology, index) => (

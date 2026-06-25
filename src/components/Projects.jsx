@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 
 import { projects } from '../constants'
 import { SectionWrapper } from '../hoc'
@@ -10,20 +10,20 @@ import ProjectCard from './ProjectCard'
 const Projects = () => {
   return (
     <div className="-mt-[2rem]">
-      <motion.div variants={textVariant()}>
+      <m.div variants={textVariant()}>
         <h2 className={`${styles.sectionHeadTextLight}`}>Projects</h2>
-      </motion.div>
+      </m.div>
 
       <div className="w-full flex">
-        <motion.p
+        <m.p
           variants={fadeIn('', '', 0.1, 1)}
           className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
         >
           Some of my side projects and open source contributions.
-        </motion.p>
+        </m.p>
       </div>
 
-      <motion.div
+      <m.div
         variants={staggerContainer()}
         initial="hidden"
         whileInView="show"
@@ -35,7 +35,7 @@ const Projects = () => {
             <ProjectCard key={project.id} index={index} {...project} />
           ))}
         </div>
-      </motion.div>
+      </m.div>
     </div>
   )
 }

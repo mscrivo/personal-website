@@ -1,11 +1,11 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import PropTypes from 'prop-types'
 
 import { fadeIn } from '../utils/motion'
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
-    <motion.div
+    <m.div
       variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
       className="xs:w-[250px] w-full card-gradient p-[1px] rounded-[20px] shadow-card"
     >
@@ -21,7 +21,7 @@ const ServiceCard = ({ index, title, icon }) => {
           {title}
         </h3>
       </div>
-    </motion.div>
+    </m.div>
   )
 }
 

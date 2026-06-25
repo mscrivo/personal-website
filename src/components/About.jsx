@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 
 import { services } from '../constants'
 import { SectionWrapper } from '../hoc'
@@ -10,12 +10,12 @@ import ServiceCard from './ServiceCard'
 const About = () => {
   return (
     <div className="-mt-[4rem]">
-      <motion.div variants={textVariant()}>
+      <m.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>About Me</h2>
-      </motion.div>
+      </m.div>
 
-      <motion.p
+      <m.p
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
       >
@@ -43,7 +43,7 @@ const About = () => {
         optimization. If your codebase and developer tooling are a mess and in
         need of some TLC, or your app backend is out of date and slow, I&apos;m
         your person!
-      </motion.p>
+      </m.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (

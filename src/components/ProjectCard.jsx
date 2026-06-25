@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import PropTypes from 'prop-types'
 
 import { github, pineapple } from '../assets'
@@ -15,7 +15,7 @@ const ProjectCard = ({
   index,
 }) => {
   return (
-    <motion.article
+    <m.article
       variants={fadeIn('up', 'spring', index * 0.25, 0.75)}
       className="project-card group relative overflow-hidden rounded-[24px]"
     >
@@ -88,7 +88,7 @@ const ProjectCard = ({
           ) : null}
         </div>
       </div>
-    </motion.article>
+    </m.article>
   )
 }
 
