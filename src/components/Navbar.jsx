@@ -44,10 +44,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-2 fixed 
-      top-0 z-50 sm:opacity-[0.97] xxs:h-[12vh] nav-shell ${
-        scrolled ? 'nav-scrolled' : ''
-      }`}
+      className={`${styles.paddingX} w-full flex items-center py-2 fixed
+      top-0 z-50 sm:opacity-[0.97] nav-shell ${scrolled ? 'nav-scrolled' : ''}`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <a
@@ -62,12 +60,12 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Michael Scrivo logo"
-            className="sm:w-[50px] sm:h-[50px] w-[45px] h-[45px] object-contain"
+            className="sm:w-[50px] sm:h-[50px] w-[38px] h-[38px] object-contain"
           />
           <img
             src={logotext}
             alt=""
-            className="sm:w-[90px] sm:h-[90px] w-[85px] h-[85px] -ml-[0.6rem] object-contain"
+            className="sm:w-[90px] sm:h-[90px] w-[64px] h-[64px] -ml-[0.6rem] object-contain"
           />
         </a>
         <ul className="list-none hidden sm:flex flex-row gap-10 mt-2">

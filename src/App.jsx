@@ -11,7 +11,7 @@ import {
 
 const App = () => {
   return (
-    <div className="relative z-0">
+    <div id="app-root" className="relative z-0">
       <div>
         <Navbar />
         <Hero />

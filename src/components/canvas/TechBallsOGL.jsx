@@ -93,9 +93,12 @@ const TechBallsOGL = ({ technologies, cellRefs, hoveredIndex }) => {
       width: '100vw',
       height: '100vh',
       pointerEvents: 'none',
-      zIndex: '0',
+      // Sit above the section content but below the navbar (z-50). Mount inside
+      // #app-root so this z-index shares the navbar's stacking context.
+      zIndex: '10',
     })
-    document.body.appendChild(canvas)
+    const mountTarget = document.getElementById('app-root') ?? document.body
+    mountTarget.appendChild(canvas)
 
     const camera = new Camera(gl, { fov: 35, aspect: 1 })
     camera.position.set(0, 0, 5)

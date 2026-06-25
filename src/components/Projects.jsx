@@ -27,7 +27,7 @@ const Projects = () => {
         variants={staggerContainer()}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.1 }}
         className={`${styles.innerWidth} mx-auto flex flex-col`}
       >
         <div className="mt-[50px] grid grid-cols-1 gap-6 lg:grid-cols-2">
