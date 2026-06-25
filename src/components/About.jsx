@@ -9,7 +9,7 @@ import ServiceCard from './ServiceCard'
 
 const About = () => {
   return (
-    <div className="-mt-[4rem]">
+    <div className="sm:-mt-[4rem]">
       <m.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>About Me</h2>

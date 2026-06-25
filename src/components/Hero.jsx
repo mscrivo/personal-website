@@ -142,7 +142,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="absolute top-0 left-0 z-0 h-[100vh] w-screen">
+      <div className="absolute top-0 left-0 z-0 h-[88svh] sm:h-screen w-screen">
         <img
           src={bwmap}
           alt="Map of Toronto"
@@ -152,7 +152,7 @@ const Hero = () => {
         />
       </div>
       <section
-        className="relative flex sm:flex-row flex-col w-full h-screen mx-auto
+        className="relative flex sm:flex-row flex-col w-full h-[88svh] sm:h-screen mx-auto
         bg-hero bg-hero-mobile overflow-hidden"
         style={sectionStyle}
       >
