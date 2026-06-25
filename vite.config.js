@@ -11,27 +11,10 @@ export default defineConfig({
     vitePluginFaviconsInject('./src/assets/logo/logo-bw.png'),
   ],
   build: {
-    chunkSizeWarningLimit: 950,
     rollupOptions: {
       output: {
         manualChunks(id) {
           const normalizedId = id.replaceAll('\\', '/')
-
-          if (normalizedId.includes('/node_modules/three/examples/')) {
-            return 'three-examples'
-          }
-
-          if (normalizedId.includes('/node_modules/three/')) {
-            return 'three-core'
-          }
-
-          if (normalizedId.includes('/node_modules/@react-three/fiber/')) {
-            return 'react-three-fiber'
-          }
-
-          if (normalizedId.includes('/node_modules/@react-three/drei/')) {
-            return 'react-three-drei'
-          }
 
           if (normalizedId.includes('/node_modules/motion/')) {
             return 'motion'

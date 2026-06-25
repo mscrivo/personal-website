@@ -1,6 +1,5 @@
 import js from '@eslint/js'
 import eslintCommentsPlugin from '@eslint-community/eslint-plugin-eslint-comments'
-import reactThreePlugin from '@react-three/eslint-plugin'
 import importPlugin from 'eslint-plugin-import'
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 import reactPlugin from 'eslint-plugin-react'
@@ -32,7 +31,6 @@ export default [
       react: reactPlugin,
       'react-refresh': reactRefreshPlugin,
       'react-hooks': reactHookPlugin,
-      '@react-three': reactThreePlugin,
       unicorn: unicornPlugin,
     },
     languageOptions: {

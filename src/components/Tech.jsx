@@ -6,22 +6,17 @@ import { SectionWrapper } from '../hoc'
 import { styles } from '../styles'
 import { textVariant } from '../utils/motion'
 
-// Defer the Three.js bundle until the tech section mounts.
-const BallCanvas = lazy(() => import('./canvas/Ball'))
+// Defer the WebGL (OGL) bundle until the tech section is near the viewport.
+const TechBalls = lazy(() => import('./canvas/TechBallsOGL'))
 
 const Tech = () => {
-  const containerRef = useRef(null)
   const gridRef = useRef(null)
-  // Stable ref per grid cell; the single canvas scissors a <View> to each one.
+  // Stable ref per grid cell; the single canvas scissors a ball to each one.
   const [cellRefs] = useState(() => technologies.map(() => createRef()))
   const [inView, setInView] = useState(false)
-  // Index of the ball currently hovered; drives the DOM tooltip below. The
-  // tooltip lives in the DOM (not a drei <Html>) because <Html> positions
-  // against the full canvas, not the View's scissor, so it lands way off.
   const [hoveredIndex, setHoveredIndex] = useState(null)
 
-  // Only mount the (expensive) WebGL canvas while the grid is on screen, so the
-  // always-on render loop doesn't burn CPU when the section is out of view.
+  // Only mount the WebGL canvas while the grid is on screen.
   useEffect(() => {
     const el = gridRef.current
     if (!el) return
@@ -35,7 +30,7 @@ const Tech = () => {
   }, [])
 
   return (
-    <div ref={containerRef}>
+    <div>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubTextLight}>My skills</p>
         <h2 className={styles.sectionHeadTextLight}>Technologies.</h2>
@@ -44,9 +39,11 @@ const Tech = () => {
       <div ref={gridRef} className="flex flex-wrap justify-center gap-10 mt-14">
         {technologies.map((technology, index) => (
           <div
-            className="relative w-28 h-28"
             key={technology.name}
             ref={cellRefs[index]}
+            className="relative w-28 h-28"
+            onPointerEnter={() => setHoveredIndex(index)}
+            onPointerLeave={() => setHoveredIndex(null)}
           >
             {hoveredIndex === index && (
               <div className="absolute left-1/2 -top-2 z-10 -translate-x-1/2 -translate-y-full whitespace-nowrap rounded bg-black/75 p-2 text-white pointer-events-none">
@@ -59,11 +56,10 @@ const Tech = () => {
 
       {inView && (
         <Suspense fallback={null}>
-          <BallCanvas
+          <TechBalls
             technologies={technologies}
             cellRefs={cellRefs}
-            eventSource={containerRef}
-            onHover={setHoveredIndex}
+            hoveredIndex={hoveredIndex}
           />
         </Suspense>
       )}
