@@ -152,7 +152,7 @@ const Hero = () => {
         />
       </div>
       <section
-        className="relative flex sm:flex-row flex-col w-full h-screen mx-auto 
+        className="relative flex sm:flex-row flex-col w-full h-[88svh] sm:h-screen mx-auto
         bg-hero bg-hero-mobile overflow-hidden"
         style={sectionStyle}
       >
