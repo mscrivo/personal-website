@@ -146,6 +146,8 @@ const Hero = () => {
         <img
           src={bwmap}
           alt="Map of Toronto"
+          fetchPriority="high"
+          decoding="async"
           className="w-full h-full object-cover"
         />
       </div>
@@ -225,9 +227,9 @@ const Hero = () => {
             <h1 className={`${styles.heroHeadText} text-eerieBlack uppercase`}>
               Hi, I&apos;m{' '}
               <span
-                className="sm:text-battleGray sm:text-[90px] 
-                text-eerieBlack text-[50px] font-mova
+                className="sm:text-[90px] text-[50px] font-mova
                 font-extrabold uppercase"
+                style={{ color: mood.deep }}
               >
                 Michael
               </span>

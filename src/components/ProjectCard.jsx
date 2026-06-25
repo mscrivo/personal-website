@@ -23,6 +23,8 @@ const ProjectCard = ({
         <img
           src={image}
           alt={name}
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.05]"
         />
         <div className="project-image-overlay" />
@@ -60,6 +62,8 @@ const ProjectCard = ({
               <img
                 src={pineapple}
                 alt="visit"
+                loading="lazy"
+                decoding="async"
                 className="w-[20px] h-[20px] object-contain"
               />
               Visit
@@ -75,6 +79,8 @@ const ProjectCard = ({
               <img
                 src={github}
                 alt="source"
+                loading="lazy"
+                decoding="async"
                 className="w-[18px] h-[18px] object-contain"
               />
               Source

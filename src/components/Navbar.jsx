@@ -19,6 +19,29 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Highlight the nav item for whichever section is currently in view. The
+  // section anchors carry the ids set by SectionWrapper's hash-span.
+  useEffect(() => {
+    const sections = navLinks
+      .map((nav) => document.getElementById(nav.id))
+      .filter(Boolean)
+    if (sections.length === 0) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+        if (!visible) return
+        const nav = navLinks.find((item) => item.id === visible.target.id)
+        if (nav) setActive(nav.title)
+      },
+      { rootMargin: '-40% 0px -55% 0px', threshold: [0, 0.5, 1] },
+    )
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <nav
       className={`${styles.paddingX} w-full flex items-center py-2 fixed 

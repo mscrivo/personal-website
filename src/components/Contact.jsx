@@ -9,10 +9,10 @@ import { slideIn } from '../utils/motion'
 
 const Contact = () => {
   return (
-    <div className="-mt-[8rem] xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+    <div className="-mt-[8rem] flex flex-col items-center justify-center gap-10 overflow-hidden">
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
-        className="flex-[0.75] bg-jet p-8 rounded-2xl space-y-4"
+        className="w-full max-w-2xl bg-jet p-8 rounded-2xl space-y-4"
       >
         <p className={styles.sectionHeadTextLight}>Get in touch</p>
         <span className={`${styles.sectionSubText} flex items-center gap-2`}>

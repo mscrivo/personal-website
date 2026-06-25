@@ -5,11 +5,14 @@ import { Preload } from '@react-three/drei/core/Preload'
 import { useTexture } from '@react-three/drei/core/Texture'
 import { View } from '@react-three/drei/web/View'
 import { Canvas } from '@react-three/fiber'
+import { useReducedMotion } from 'motion/react'
 import PropTypes from 'prop-types'
 import { Suspense } from 'react'
 
 const Ball = ({ imgUrl, onHoverChange }) => {
   const [decal] = useTexture([imgUrl])
+  // Hold the ball still for visitors who prefer reduced motion.
+  const reduceMotion = useReducedMotion()
 
   return (
     <>
@@ -23,7 +26,11 @@ const Ball = ({ imgUrl, onHoverChange }) => {
         intensity={0.5}
         color="#88aaff"
       />
-      <Float speed={2.5} rotationIntensity={1} floatIntensity={2}>
+      <Float
+        speed={reduceMotion ? 0 : 2.5}
+        rotationIntensity={reduceMotion ? 0 : 1}
+        floatIntensity={reduceMotion ? 0 : 2}
+      >
         <mesh
           castShadow
           receiveShadow
