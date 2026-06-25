@@ -113,11 +113,10 @@ const Navbar = () => {
               >
                 {navLinks.map((nav) => (
                   <li
-                    id={nav.id}
                     key={nav.id}
                     className={`${
                       active === nav.title ? 'text-french' : 'text-eerieBlack'
-                    } text-[48px] font-medium font-mova 
+                    } text-[48px] font-medium font-mova
                       uppercase tracking-[1px] cursor-pointer`}
                   >
                     <a
