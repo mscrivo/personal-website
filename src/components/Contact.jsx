@@ -12,7 +12,7 @@ const Contact = () => {
     <div className="-mt-[8rem] xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
-        className="flex-[0.75] bg-jet p-8 rounded-2xl"
+        className="flex-[0.75] bg-jet p-8 rounded-2xl space-y-4"
       >
         <p className={styles.sectionHeadTextLight}>Get in touch</p>
         <span className={`${styles.sectionSubText} flex items-center gap-2`}>
@@ -21,16 +21,26 @@ const Contact = () => {
         </span>
         <span className={`${styles.sectionSubText} flex items-center gap-2`}>
           <FaLinkedin className="text-[24px]" />
-          <a href="https://www.linkedin.com/in/michaelscrivo/">LinkedIn</a>
+          <a
+            href="https://www.linkedin.com/in/michaelscrivo/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
         </span>
         <span className={`${styles.sectionSubText} flex items-center gap-2`}>
           <SiKeybase className="text-[24px]" />
-          <a href="https://keybase.io/mscrivo">Keybase</a>
+          <a href="https://keybase.io/mscrivo" target="_blank" rel="noreferrer">
+            Keybase
+          </a>
         </span>
         <span className={`${styles.sectionSubText} flex items-center gap-2`}>
           <SiBluesky className="text-[24px]" />
           <a
             href="https://bsky.app/profile/michaelscrivo.com"
+            target="_blank"
+            rel="noreferrer"
             className="font-sans"
           >
             @michaelscrivo.com

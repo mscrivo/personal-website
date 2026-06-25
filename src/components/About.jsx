@@ -20,12 +20,19 @@ const About = () => {
         className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
       >
         I graduated from the{' '}
-        <a href="https://www.utoronto.ca/" className="inline-link">
+        <a
+          href="https://www.utoronto.ca/"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-link"
+        >
           University of Toronto
         </a>{' '}
         with a specialist in{' '}
         <a
           href="https://utsc.calendar.utoronto.ca/specialist-program-computer-science-software-engineering-stream-science-scspe0795"
+          target="_blank"
+          rel="noreferrer"
           className="inline-link"
         >
           Software Engineering

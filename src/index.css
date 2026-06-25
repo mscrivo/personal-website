@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 @import 'tailwindcss';
 
 @theme {
@@ -45,46 +43,33 @@
   --shadow-cardLight: 0px 19px 38px #eaeaec, 0px 15px 12px #eaeaec;
 
   /* Custom Font Families */
-  --font-family-arenq: 'Arenq';
   --font-family-beckman: 'Beckman';
   --font-family-mova: 'Mova';
   --font-family-overcameBold: 'Overcame Bold';
-  --font-family-overcameOutline: 'Overcame Outline';
   --font-family-poppins: 'Poppins', sans-serif;
-}
-
-@font-face {
-  font-family: 'Arenq';
-  src: url('./fonts/arenq.otf');
 }
 
 @font-face {
   font-family: 'Mova';
   src: url('./fonts/mova.otf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Beckman';
   src: url('./fonts/beckman.otf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Overcame Bold';
   src: url('./fonts/overcame-bold.woff');
-}
-
-@font-face {
-  font-family: 'Overcame Outline';
-  src: url('./fonts/overcame-outline.woff');
+  font-display: swap;
 }
 
 /* Custom background image utilities */
 .bg-about {
-  background-image: linear-gradient(
-    165deg,
-    rgba(244, 244, 246, 1) 100%,
-    rgba(122, 122, 122, 1) 100%
-  );
+  background-color: #f4f4f6;
 }
 
 .bg-experience {
@@ -126,23 +111,6 @@
       rgba(10, 10, 10, 0.55) 0%,
       rgba(10, 10, 10, 0) 60%
     );
-}
-
-.mood-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(41, 41, 41, 0.18);
-  background: rgba(244, 244, 246, 0.72);
-  box-shadow: 0 8px 24px rgba(10, 10, 10, 0.08);
-  color: #292929;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 600;
-  width: fit-content;
 }
 
 .dev-mood-switcher {
@@ -313,19 +281,11 @@
 
 .bg-tech {
   background-image:
-    linear-gradient(
-      165deg,
-      rgba(20, 20, 20, 0.8) 100%,
-      rgba(109, 109, 116, 0.8) 100%
-    ),
+    linear-gradient(rgba(20, 20, 20, 0.8), rgba(20, 20, 20, 0.8)),
     url('/src/assets/backgrounds/circuit-board.jpg');
 }
 
 /* Custom font family utilities */
-.font-arenq {
-  font-family: 'Arenq';
-}
-
 .font-beckman {
   font-family: 'Beckman';
 }
@@ -336,10 +296,6 @@
 
 .font-overcameBold {
   font-family: 'Overcame Bold';
-}
-
-.font-overcameOutline {
-  font-family: 'Overcame Outline';
 }
 
 .font-poppins {
@@ -353,8 +309,11 @@ body {
   line-height: 1.6;
 }
 
-* {
+html {
   scroll-behavior: smooth;
+}
+
+* {
   color-scheme: dark;
 }
 
@@ -414,12 +373,6 @@ body {
   background: rgba(41, 41, 41, 0.08);
 }
 
-.hero-heading {
-  font-family: 'Poppins', sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
@@ -440,21 +393,6 @@ body {
     0 0 0 4px #afafafd2,
     inset 0 2px 0 rgba(0, 0, 0, 0.08),
     0 3px 0 4px rgba(0, 0, 0, 0.05);
-}
-
-.glassmorphism {
-  background: rgba(20, 20, 20, 0.7);
-  box-shadow: 0 8px 32px 0 rgba(133, 133, 133, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.card-shadow {
-  box-shadow:
-    rgba(155, 155, 155, 0.3) 0 2px 6px,
-    rgba(155, 155, 155, 0.22) 0 0 4px;
-  border-radius: 24px;
 }
 
 .project-card {
@@ -551,12 +489,6 @@ body {
   background: rgba(20, 20, 20, 0.95);
 }
 
-.black-gradient {
-  background: #000000;
-  background: -webkit-linear-gradient(to right, #434343, #000000);
-  background: linear-gradient(to right, #434343, #000000);
-}
-
 .bw-gradient {
   background: rgb(10, 10, 10);
   background: linear-gradient(
@@ -573,108 +505,4 @@ body {
     rgba(153, 153, 161, 1) 25%,
     rgba(153, 153, 161, 1) 100%
   );
-}
-
-/* canvas- styles */
-.canvas-loader {
-  font-size: 10px;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  position: relative;
-  text-indent: -9999em;
-  animation: mulShdSpin 1.1s infinite ease;
-  transform: translateZ(0);
-}
-
-@keyframes mulShdSpin {
-  0%,
-  100% {
-    box-shadow:
-      0em -2.6em 0em 0em #ffffff,
-      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
-      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
-      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
-      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
-      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
-      -2.6em 0em 0 0em rgba(255, 255, 255, 0.5),
-      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
-  }
-  12.5% {
-    box-shadow:
-      0em -2.6em 0em 0em rgba(255, 255, 255, 0.7),
-      1.8em -1.8em 0 0em #ffffff,
-      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
-      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
-      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
-      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
-      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
-      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
-  }
-  25% {
-    box-shadow:
-      0em -2.6em 0em 0em rgba(255, 255, 255, 0.5),
-      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7),
-      2.5em 0em 0 0em #ffffff,
-      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
-      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
-      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
-      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
-      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-  }
-  37.5% {
-    box-shadow:
-      0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
-      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5),
-      2.5em 0em 0 0em rgba(255, 255, 255, 0.7),
-      1.75em 1.75em 0 0em #ffffff,
-      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
-      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
-      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
-      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-  }
-  50% {
-    box-shadow:
-      0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
-      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
-      2.5em 0em 0 0em rgba(255, 255, 255, 0.5),
-      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7),
-      0em 2.5em 0 0em #ffffff,
-      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
-      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
-      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-  }
-  62.5% {
-    box-shadow:
-      0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
-      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
-      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
-      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5),
-      0em 2.5em 0 0em rgba(255, 255, 255, 0.7),
-      -1.8em 1.8em 0 0em #ffffff,
-      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
-      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-  }
-  75% {
-    box-shadow:
-      0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
-      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
-      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
-      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
-      0em 2.5em 0 0em rgba(255, 255, 255, 0.5),
-      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7),
-      -2.6em 0em 0 0em #ffffff,
-      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-  }
-  87.5% {
-    box-shadow:
-      0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
-      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
-      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
-      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
-      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
-      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
-      -2.6em 0em 0 0em rgba(255, 255, 255, 0.7),
-      -1.8em -1.8em 0 0em #ffffff;
-  }
 }

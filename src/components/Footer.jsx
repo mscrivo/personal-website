@@ -5,7 +5,11 @@ const Footer = () => {
         <div className="text-center text-secondary text-[14px]">
           © {new Date().getFullYear()} Michael Scrivo. Template based on awesome
           work by{' '}
-          <a href="https://github.com/shaqdeff/Portfolio-Template">
+          <a
+            href="https://github.com/shaqdeff/Portfolio-Template"
+            target="_blank"
+            rel="noreferrer"
+          >
             Shaquille Ndunda
           </a>
         </div>

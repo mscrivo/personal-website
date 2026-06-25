@@ -39,7 +39,12 @@ const ExperienceCard = ({ experience }) => (
         style={{ margin: 0 }}
       >
         {experience.company_url ? (
-          <a href={experience.company_url} className="inline-link">
+          <a
+            href={experience.company_url}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-link"
+          >
             {experience.company_name}
           </a>
         ) : (

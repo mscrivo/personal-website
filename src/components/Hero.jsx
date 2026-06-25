@@ -145,15 +145,8 @@ const Hero = () => {
       <div className="absolute top-0 left-0 z-0 h-[100vh] w-screen">
         <img
           src={bwmap}
-          alt="toronto"
-          className="w-full h-full sm:block hidden object-cover"
-        />
-      </div>
-      <div className="absolute top-0 left-0 z-0 h-[100vh] w-screen">
-        <img
-          src={bwmap}
-          alt="toronto"
-          className="w-full h-full sm:hidden block object-cover"
+          alt="Map of Toronto"
+          className="w-full h-full object-cover"
         />
       </div>
       <section
@@ -241,7 +234,7 @@ const Hero = () => {
             </h1>
             <p className={`${styles.heroSubText} mt-2 text-eerieBlack`}>
               I&apos;m an experienced software engineer working in the Greater
-              Toronto Area area.
+              Toronto Area.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <a
