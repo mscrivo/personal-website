@@ -331,18 +331,44 @@ html {
   width: 70%;
 }
 
+/* Inline links on light backgrounds (About, Experience). */
 .inline-link {
   color: #1f1f1f;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(41, 41, 41, 0.35);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(31, 31, 31, 0.45);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
   transition:
     color 0.2s ease,
-    border-color 0.2s ease;
+    text-decoration-color 0.2s ease,
+    text-decoration-thickness 0.2s ease;
 }
 
 .inline-link:hover {
-  color: #292929;
-  border-color: rgba(41, 41, 41, 0.8);
+  color: #000;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+}
+
+/* Links on dark backgrounds (Contact card, Footer): brighter than the
+   surrounding body text and underlined so they read as clickable. */
+.link-bright {
+  color: #d4d4d8;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 212, 216, 0.5);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease,
+    text-decoration-thickness 0.2s ease;
+}
+
+.link-bright:hover {
+  color: #fff;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
 }
 
 .nav-shell {

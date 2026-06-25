@@ -25,13 +25,19 @@ const Contact = () => {
             href="https://www.linkedin.com/in/michaelscrivo/"
             target="_blank"
             rel="noreferrer"
+            className="link-bright"
           >
             LinkedIn
           </a>
         </span>
         <span className={`${styles.sectionSubText} flex items-center gap-2`}>
           <SiKeybase className="text-[24px]" />
-          <a href="https://keybase.io/mscrivo" target="_blank" rel="noreferrer">
+          <a
+            href="https://keybase.io/mscrivo"
+            target="_blank"
+            rel="noreferrer"
+            className="link-bright"
+          >
             Keybase
           </a>
         </span>
@@ -41,7 +47,7 @@ const Contact = () => {
             href="https://bsky.app/profile/michaelscrivo.com"
             target="_blank"
             rel="noreferrer"
-            className="font-sans"
+            className="font-sans link-bright"
           >
             @michaelscrivo.com
           </a>

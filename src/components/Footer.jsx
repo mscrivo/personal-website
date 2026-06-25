@@ -9,6 +9,7 @@ const Footer = () => {
             href="https://github.com/shaqdeff/Portfolio-Template"
             target="_blank"
             rel="noreferrer"
+            className="link-bright"
           >
             Shaquille Ndunda
           </a>
