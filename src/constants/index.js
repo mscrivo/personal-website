@@ -173,33 +173,30 @@ const experiences = [
 const projects = [
   {
     id: 'project-1',
-    name: 'Old Website',
-    description: 'This was my old website circa 2000-2010 just for nostalgia.',
-    image: oldsite,
-    tags: ['Nostalgia', 'HTML/CSS', 'Archive'],
-    featured: false,
-    demo: 'https://michaelscrivo.com/old',
-  },
-  {
-    id: 'project-2',
     name: 'OotD',
     description:
       'Outlook on the Desktop is a Windows application that keeps your Outlook calendar on your desktop.',
     image: ootd,
     repo: 'https://github.com/mscrivo/OotD',
     tags: ['Windows', 'Productivity', '.NET'],
-    featured: true,
     demo: 'https://outlookonthedesktop.com',
   },
   {
-    id: 'project-3',
+    id: 'project-2',
     name: 'SMR Computer Services',
     description:
       'My side business — a local partner for custom PC builds, networks, surveillance, remote support, and software, serving homes and small businesses across the Greater Toronto Area.',
     image: smr,
     tags: ['Small Business', 'IT Services', 'GTA'],
-    featured: true,
     demo: 'https://smrcomputers.ca/',
+  },
+  {
+    id: 'project-3',
+    name: 'Old Website',
+    description: 'This was my old website circa 2000-2010 just for nostalgia.',
+    image: oldsite,
+    tags: ['Nostalgia', 'HTML/CSS', 'Archive'],
+    demo: 'https://michaelscrivo.com/old',
   },
 ]
 

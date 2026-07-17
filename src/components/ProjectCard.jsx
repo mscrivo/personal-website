@@ -11,7 +11,6 @@ const ProjectCard = ({
   repo,
   demo,
   tags = [],
-  featured = false,
   index,
 }) => {
   return (
@@ -28,7 +27,6 @@ const ProjectCard = ({
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.05]"
         />
         <div className="project-image-overlay" />
-        {featured ? <span className="project-badge">Featured</span> : null}
       </div>
 
       <div className="flex flex-col gap-4 p-6">
@@ -99,7 +97,6 @@ ProjectCard.propTypes = {
   repo: PropTypes.string,
   demo: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
-  featured: PropTypes.bool,
   index: PropTypes.number.isRequired,
 }
 
