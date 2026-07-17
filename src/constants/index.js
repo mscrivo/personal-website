@@ -12,6 +12,7 @@ import {
   ruby,
   ootd,
   oldsite,
+  smr,
   terraform,
   macos,
   linux,
@@ -189,6 +190,16 @@ const projects = [
     tags: ['Windows', 'Productivity', '.NET'],
     featured: true,
     demo: 'https://outlookonthedesktop.com',
+  },
+  {
+    id: 'project-3',
+    name: 'SMR Computer Services',
+    description:
+      'My side business — a local partner for custom PC builds, networks, surveillance, remote support, and software, serving homes and small businesses across the Greater Toronto Area.',
+    image: smr,
+    tags: ['Small Business', 'IT Services', 'GTA'],
+    featured: true,
+    demo: 'https://smrcomputers.ca/',
   },
 ]
 

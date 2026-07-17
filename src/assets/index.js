@@ -12,6 +12,7 @@ import logo from './logo/logo-bw.png?format=webp'
 import logotext from './logo/logo-text-black.png?format=webp'
 import oldsite from './projects/oldsite.png?format=webp'
 import ootd from './projects/ootd.webp'
+import smr from './projects/smr.png?format=webp'
 import docker from './tech/docker.png?format=webp'
 import dotnet from './tech/dotnet.png?format=webp'
 import git from './tech/git.png?format=webp'
@@ -46,6 +47,7 @@ export {
   ruby,
   ootd,
   oldsite,
+  smr,
   terraform,
   macos,
   linux,
