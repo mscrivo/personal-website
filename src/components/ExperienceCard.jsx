@@ -54,6 +54,19 @@ const ExperienceCard = ({ experience }) => (
         )}
       </p>
     </div>
+
+    {experience.points?.length > 0 && (
+      <ul className="mt-5 list-disc ml-5 space-y-2">
+        {experience.points.map((point, index) => (
+          <li
+            key={`experience-point-${index}`}
+            className="text-jetLight text-[14px] pl-1 tracking-wider"
+          >
+            {point}
+          </li>
+        ))}
+      </ul>
+    )}
   </VerticalTimelineElement>
 )
 
@@ -65,6 +78,7 @@ ExperienceCard.propTypes = {
     date: PropTypes.string.isRequired,
     icon: PropTypes.string.isRequired,
     iconBg: PropTypes.string.isRequired,
+    points: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 }
 
