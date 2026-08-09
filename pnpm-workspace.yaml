@@ -8,3 +8,5 @@ overrides:
   sharp: ^0.35.2
 minimumReleaseAgeExclude:
   - eslint-plugin-unicorn@69.0.0
+  - '@babel/core@7.29.1'
+  - brace-expansion@1.1.16 || 1.1.17 || 1.1.18
