@@ -1,6 +1,6 @@
 [tools]
 node = "24"
-pnpm = "11.20"
+pnpm = "11.21"
 
 [tasks.dev]
 run = ["pnpm install", "pnpm run dev"]
