@@ -88,6 +88,14 @@ export default [
     },
   },
   {
+    // Vite asset imports carry query strings (?format=webp&w=...) that the
+    // node resolver cannot validate; the build fails loudly on a real typo.
+    files: ['src/assets/index.js'],
+    rules: {
+      'import/no-unresolved': 'off',
+    },
+  },
+  {
     files: ['tests/**/*.js', 'playwright.config.js'],
     languageOptions: {
       globals: { ...globals.node },

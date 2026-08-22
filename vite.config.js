@@ -8,7 +8,9 @@ export default defineConfig({
   plugins: [
     react(),
     imagetools(),
-    vitePluginFaviconsInject('./src/assets/logo/logo-bw.png'),
+    vitePluginFaviconsInject('./src/assets/logo/logo-bw.png', {
+      theme_color: '#141414',
+    }),
   ],
   build: {
     rollupOptions: {

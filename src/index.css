@@ -67,6 +67,34 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/poppins-400.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/poppins-500.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/poppins-600.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/poppins-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
 /* Custom background image utilities */
 .bg-about {
   background-color: #f4f4f6;
