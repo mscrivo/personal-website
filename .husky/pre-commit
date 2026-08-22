@@ -15,7 +15,7 @@ if command -v cygpath >/dev/null 2>&1; then
       *) rest="" ;;
     esac
     [ -z "$entry" ] && continue
-    w=$(cygpath -w "$entry") || continue
+    w=$(cygpath -w "$entry" 2>/dev/null) || continue
     if [ -z "$win_path" ]; then win_path=$w; else win_path="$win_path;$w"; fi
   done
 
