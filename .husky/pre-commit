@@ -1,1 +1,26 @@
+#!/usr/bin/env sh
+# Git runs hooks under Git Bash with a POSIX-style PATH (/c/Users/...), which
+# Windows-native processes cannot use: when lint-staged spawns the .CMD shims
+# for prettier/eslint, they fail to locate node (ENOENT). Rebuild a native
+# Windows PATH before invoking pnpm. No-op on Linux/macOS (no cygpath).
+if command -v cygpath >/dev/null 2>&1; then
+  pnpm_bin=$(command -v pnpm) || exit 1
+
+  win_path=""
+  rest=$PATH
+  while [ -n "$rest" ]; do
+    entry=${rest%%:*}
+    case $rest in
+      *:*) rest=${rest#*:} ;;
+      *) rest="" ;;
+    esac
+    [ -z "$entry" ] && continue
+    w=$(cygpath -w "$entry") || continue
+    if [ -z "$win_path" ]; then win_path=$w; else win_path="$win_path;$w"; fi
+  done
+
+  export PATH="$(cygpath -w node_modules/.bin);$win_path"
+  exec "$pnpm_bin" exec lint-staged
+fi
+
 pnpm exec lint-staged
