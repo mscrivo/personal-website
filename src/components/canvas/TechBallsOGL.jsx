@@ -61,8 +61,16 @@ const fragment = /* glsl */ `
 `
 
 // One WebGL context (via OGL — a fraction of three.js's weight) renders every
-// ball by scissoring the shared canvas to each tracked grid cell.
-const TechBallsOGL = ({ technologies, cellRefs, hoveredIndex }) => {
+// ball by scissoring the shared canvas to each tracked grid cell. The canvas is
+// scoped to the skills grid rather than the viewport, so the drawing buffer
+// stays small and scrolls with the section instead of compositing a fixed
+// fullscreen layer over the whole page while scrolling.
+const TechBallsOGL = ({
+  technologies,
+  cellRefs,
+  containerRef,
+  hoveredIndex,
+}) => {
   // The render loop reads these through refs so it never restarts on hover or
   // motion-preference changes.
   const hoveredRef = useRef(hoveredIndex)
@@ -78,6 +86,9 @@ const TechBallsOGL = ({ technologies, cellRefs, hoveredIndex }) => {
   }, [reduceMotion])
 
   useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
     const renderer = new Renderer({
       alpha: true,
       antialias: true,
@@ -88,17 +99,11 @@ const TechBallsOGL = ({ technologies, cellRefs, hoveredIndex }) => {
 
     const canvas = gl.canvas
     Object.assign(canvas.style, {
-      position: 'fixed',
+      position: 'absolute',
       inset: '0',
-      width: '100vw',
-      height: '100vh',
       pointerEvents: 'none',
-      // Sit above the section content but below the navbar (z-50). Mount inside
-      // #app-root so this z-index shares the navbar's stacking context.
-      zIndex: '10',
     })
-    const mountTarget = document.getElementById('app-root') ?? document.body
-    mountTarget.appendChild(canvas)
+    container.appendChild(canvas)
 
     const camera = new Camera(gl, { fov: 35, aspect: 1 })
     camera.position.set(0, 0, 5)
@@ -132,7 +137,8 @@ const TechBallsOGL = ({ technologies, cellRefs, hoveredIndex }) => {
     })
     const mesh = new Mesh(gl, { geometry, program })
 
-    const resize = () => renderer.setSize(window.innerWidth, window.innerHeight)
+    const resize = () =>
+      renderer.setSize(container.clientWidth, container.clientHeight)
     resize()
     window.addEventListener('resize', resize)
 
@@ -142,7 +148,7 @@ const TechBallsOGL = ({ technologies, cellRefs, hoveredIndex }) => {
       raf = requestAnimationFrame(render)
       const time = (performance.now() - start) / 1000
       const { dpr } = renderer
-      const viewportH = window.innerHeight
+      const canvasRect = canvas.getBoundingClientRect()
 
       gl.bindFramebuffer(gl.FRAMEBUFFER, null)
       gl.disable(gl.SCISSOR_TEST)
@@ -157,16 +163,16 @@ const TechBallsOGL = ({ technologies, cellRefs, hoveredIndex }) => {
         if (!el) continue
         const rect = el.getBoundingClientRect()
         if (
-          rect.bottom < 0 ||
-          rect.top > viewportH ||
-          rect.right < 0 ||
-          rect.left > window.innerWidth
+          rect.bottom < canvasRect.top ||
+          rect.top > canvasRect.bottom ||
+          rect.right < canvasRect.left ||
+          rect.left > canvasRect.right
         ) {
           continue
         }
 
-        const x = Math.round(rect.left * dpr)
-        const y = Math.round((viewportH - rect.bottom) * dpr)
+        const x = Math.round((rect.left - canvasRect.left) * dpr)
+        const y = Math.round((canvasRect.bottom - rect.bottom) * dpr)
         const w = Math.round(rect.width * dpr)
         const h = Math.round(rect.height * dpr)
         gl.viewport(x, y, w, h)
@@ -194,7 +200,7 @@ const TechBallsOGL = ({ technologies, cellRefs, hoveredIndex }) => {
       canvas.remove()
       gl.getExtension('WEBGL_lose_context')?.loseContext()
     }
-  }, [technologies, cellRefs])
+  }, [technologies, cellRefs, containerRef])
 
   return null
 }
@@ -209,6 +215,9 @@ TechBallsOGL.propTypes = {
   cellRefs: PropTypes.arrayOf(
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   ).isRequired,
+  containerRef: PropTypes.shape({
+    current: PropTypes.instanceOf(Element),
+  }).isRequired,
   hoveredIndex: PropTypes.number,
 }
 

@@ -36,7 +36,10 @@ const Tech = () => {
         <h2 className={styles.sectionHeadTextLight}>Technologies.</h2>
       </m.div>
 
-      <div ref={gridRef} className="flex flex-wrap justify-center gap-10 mt-14">
+      <div
+        ref={gridRef}
+        className="relative flex flex-wrap justify-center gap-10 mt-14"
+      >
         {technologies.map((technology, index) => (
           <div
             key={technology.name}
@@ -59,6 +62,7 @@ const Tech = () => {
           <TechBalls
             technologies={technologies}
             cellRefs={cellRefs}
+            containerRef={gridRef}
             hoveredIndex={hoveredIndex}
           />
         </Suspense>
