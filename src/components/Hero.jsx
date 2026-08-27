@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 
 import { bwmap } from '../assets'
 import { styles } from '../styles'
+import { useTheme } from '../utils/theme'
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max)
 
@@ -24,6 +25,9 @@ const hexToRgba = (hex, alpha) => {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`
 }
 
+// Each mood carries a `dark` palette used when the dark theme is active. In
+// dark mode `deep` doubles as the bright accent for the name, mirroring how it
+// reads as a dark accent on the light hero.
 const getMoodByHour = (hour) => {
   if (hour >= 5 && hour < 10) {
     return {
@@ -34,6 +38,14 @@ const getMoodByHour = (hour) => {
       glowSoft: 'rgba(255, 232, 198, 0.8)',
       glowStrong: 'rgba(61, 87, 117, 0.62)',
       pulse: '#dca56a',
+      dark: {
+        base: '#4a3d31',
+        mid: '#3f3a35',
+        deep: '#e6c9a3',
+        glowSoft: 'rgba(220, 165, 106, 0.2)',
+        glowStrong: 'rgba(8, 10, 14, 0.75)',
+        pulse: '#dca56a',
+      },
     }
   }
 
@@ -46,6 +58,14 @@ const getMoodByHour = (hour) => {
       glowSoft: 'rgba(245, 250, 255, 0.88)',
       glowStrong: 'rgba(53, 84, 106, 0.58)',
       pulse: '#7db3d5',
+      dark: {
+        base: '#39424c',
+        mid: '#333c46',
+        deep: '#bcd8ee',
+        glowSoft: 'rgba(125, 179, 213, 0.18)',
+        glowStrong: 'rgba(6, 9, 13, 0.75)',
+        pulse: '#7db3d5',
+      },
     }
   }
 
@@ -58,6 +78,14 @@ const getMoodByHour = (hour) => {
       glowSoft: 'rgba(255, 214, 177, 0.88)',
       glowStrong: 'rgba(77, 61, 108, 0.63)',
       pulse: '#ec8d67',
+      dark: {
+        base: '#4a3a33',
+        mid: '#463538',
+        deep: '#f0b18d',
+        glowSoft: 'rgba(236, 141, 103, 0.2)',
+        glowStrong: 'rgba(9, 7, 12, 0.75)',
+        pulse: '#ec8d67',
+      },
     }
   }
 
@@ -69,6 +97,14 @@ const getMoodByHour = (hour) => {
     glowSoft: 'rgba(197, 213, 255, 0.72)',
     glowStrong: 'rgba(18, 31, 53, 0.66)',
     pulse: '#9db6ff',
+    dark: {
+      base: '#2c3140',
+      mid: '#2a2f3d',
+      deep: '#9db6ff',
+      glowSoft: 'rgba(157, 182, 255, 0.18)',
+      glowStrong: 'rgba(5, 7, 12, 0.78)',
+      pulse: '#9db6ff',
+    },
   }
 }
 
@@ -80,6 +116,8 @@ const moodPreviewHours = {
 }
 
 const Hero = () => {
+  const theme = useTheme()
+  const dark = theme === 'dark'
   const [currentHour, setCurrentHour] = useState(() => new Date().getHours())
   const [scrollProgress, setScrollProgress] = useState(0)
   const [moodOverride, setMoodOverride] = useState(null)
@@ -98,10 +136,10 @@ const Hero = () => {
     }
   }, [moodOverride])
 
-  const mood = useMemo(
-    () => getMoodByHour(moodOverride ?? currentHour),
-    [moodOverride, currentHour],
-  )
+  const mood = useMemo(() => {
+    const base = getMoodByHour(moodOverride ?? currentHour)
+    return dark ? { ...base, ...base.dark } : base
+  }, [moodOverride, currentHour, dark])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -224,7 +262,11 @@ const Hero = () => {
             <p className="text-[12px] sm:text-[14px] font-mova uppercase tracking-[0.35em] text-battleGray">
               Efficiency-minded Engineer
             </p>
-            <h1 className={`${styles.heroHeadText} text-eerieBlack uppercase`}>
+            <h1
+              className={`${styles.heroHeadText} ${
+                dark ? 'text-flashWhite' : 'text-eerieBlack'
+              } uppercase`}
+            >
               Hi, I&apos;m{' '}
               <span
                 className="sm:text-[90px] text-[50px] font-mova
@@ -234,7 +276,11 @@ const Hero = () => {
                 Michael
               </span>
             </h1>
-            <p className={`${styles.heroSubText} mt-2 text-eerieBlack`}>
+            <p
+              className={`${styles.heroSubText} mt-2 ${
+                dark ? 'text-timberWolf' : 'text-eerieBlack'
+              }`}
+            >
               I&apos;m an experienced software engineer working in the Greater
               Toronto Area.
             </p>

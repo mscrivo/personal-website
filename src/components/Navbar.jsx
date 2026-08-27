@@ -1,22 +1,49 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { close, menu, logo, logotext } from '../assets'
 import { navLinks } from '../constants'
 import { styles } from '../styles'
 
+import ThemeToggle from './ThemeToggle'
+
 const Navbar = () => {
   const [active, setActive] = useState('')
   const [toggle, setToggle] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const progressRef = useRef(null)
 
+  // One rAF-gated handler drives both the scrolled state and the progress
+  // bar (written straight to the DOM so scrolling never re-renders the nav).
   useEffect(() => {
-    const handleScroll = () => {
+    let frame = null
+
+    const update = () => {
+      frame = null
       setScrolled(window.scrollY > 10)
+      if (progressRef.current) {
+        const max = document.documentElement.scrollHeight - window.innerHeight
+        progressRef.current.style.transform = `scaleX(${
+          max > 0 ? Math.min(window.scrollY / max, 1) : 0
+        })`
+      }
     }
 
-    handleScroll()
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const handleScroll = () => {
+      if (frame === null) {
+        frame = window.requestAnimationFrame(update)
+      }
+    }
+
+    update()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleScroll, { passive: true })
+    return () => {
+      if (frame !== null) {
+        window.cancelAnimationFrame(frame)
+      }
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+    }
   }, [])
 
   // Highlight the nav item for whichever section is currently in view. The
@@ -48,6 +75,7 @@ const Navbar = () => {
       top-0 z-50 sm:opacity-[0.97] nav-shell ${scrolled ? 'nav-scrolled' : ''}`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+        <div className="nav-progress" ref={progressRef} aria-hidden="true" />
         <a
           href="/"
           className="flex items-center gap-2"
@@ -65,7 +93,7 @@ const Navbar = () => {
           <img
             src={logotext}
             alt=""
-            className="sm:w-[90px] sm:h-[90px] w-[64px] h-[64px] -ml-[0.6rem] object-contain"
+            className="nav-wordmark sm:w-[90px] sm:h-[90px] w-[64px] h-[64px] -ml-[0.6rem] object-contain"
           />
         </a>
         <ul className="list-none hidden sm:flex flex-row gap-10 mt-2">
@@ -83,9 +111,13 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+        <div className="hidden sm:flex items-center">
+          <ThemeToggle />
+        </div>
 
         {/* mobile */}
-        <div className="sm:hidden flex flex-1 w-screen justify-end items-center">
+        <div className="sm:hidden flex flex-1 w-screen justify-end items-center gap-4">
+          <ThemeToggle />
           {toggle ? (
             <div
               className={`p-6 bg-flashWhite fixed 

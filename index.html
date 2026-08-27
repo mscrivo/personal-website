@@ -3,6 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      // Apply the theme before first paint to avoid a flash of the wrong
+      // theme. An explicit choice stored by the visitor wins; otherwise
+      // follow the operating system's color scheme.
+      try {
+        const stored = localStorage.getItem('mscrivo-theme')
+        const dark =
+          stored === 'dark' ||
+          (stored !== 'light' &&
+            matchMedia('(prefers-color-scheme: dark)').matches)
+        document.documentElement.classList.toggle('dark', dark)
+      } catch {}
+    </script>
     <meta name="theme-color" content="#141414" />
     <title>Michael Scrivo | Personal Website</title>
     <meta

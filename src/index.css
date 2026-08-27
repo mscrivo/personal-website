@@ -341,7 +341,12 @@ html {
   scroll-behavior: smooth;
 }
 
-* {
+/* Base theme is light; html.dark flips native UI affordances. */
+:root {
+  color-scheme: light;
+}
+
+html.dark * {
   color-scheme: dark;
 }
 
@@ -448,7 +453,6 @@ html {
     inset 0 2px 0 rgba(0, 0, 0, 0.08),
     0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
-
 .project-card {
   background: rgba(20, 20, 20, 0.72);
   border: 1px solid rgba(244, 244, 246, 0.12);
@@ -548,7 +552,7 @@ html {
 }
 
 /* Respect users who prefer reduced motion: neutralize CSS animations,
-   transitions, and smooth scrolling. Framer Motion is handled separately via
+   transitions, and smooth scrolling. Motion is handled separately via
    <MotionConfig reducedMotion="user">. */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -559,4 +563,130 @@ html {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ===== Nav scroll progress bar (width driven by JS via scaleX) ===== */
+.nav-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: #9999a1;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+/* ===== Theme toggle ===== */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(41, 41, 41, 0.2);
+  background: rgba(244, 244, 246, 0.6);
+  color: #1f1f1f;
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    transform 0.16s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  background: rgba(244, 244, 246, 0.95);
+}
+
+/* ===== Dark theme overrides (html.dark) ===== */
+html.dark .nav-shell {
+  background: rgba(20, 20, 22, 0.85);
+  border-bottom-color: rgba(244, 244, 246, 0.08);
+}
+
+html.dark .nav-shell.nav-scrolled {
+  background: rgba(20, 20, 22, 0.92);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+html.dark .nav-wordmark {
+  /* Render the black wordmark as solid white (not a plain invert, which
+     leaves a ghost outline on the face icon). */
+  filter: brightness(0) invert(1);
+}
+html.dark .nav-links {
+  color: #d4d4d8;
+}
+
+html.dark .nav-links::after {
+  background: #d4d4d8;
+}
+
+html.dark .nav-link-active {
+  color: #f4f4f6;
+  background: rgba(244, 244, 246, 0.1);
+}
+
+html.dark .theme-toggle {
+  border-color: rgba(244, 244, 246, 0.2);
+  background: rgba(20, 20, 22, 0.6);
+  color: #f4f4f6;
+}
+
+html.dark .theme-toggle:hover {
+  background: rgba(20, 20, 22, 0.95);
+}
+
+html.dark .menu {
+  background: #161618;
+}
+
+html.dark .menu li {
+  color: #f4f4f6;
+}
+
+html.dark .menu img {
+  filter: invert(1);
+}
+
+@media (max-width: 639px) {
+  html.dark .hero-text-panel {
+    background: rgba(20, 20, 22, 0.7);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+}
+
+html.dark .hero-cta-primary {
+  background: #f4f4f6;
+  color: #141414;
+}
+
+html.dark .hero-cta-primary:hover {
+  background: #ffffff;
+}
+
+html.dark .hero-cta-secondary {
+  background: rgba(20, 20, 22, 0.7);
+  color: #f4f4f6;
+  border-color: rgba(244, 244, 246, 0.3);
+}
+
+html.dark .bg-about {
+  background-color: #1a1a1c;
+}
+
+html.dark .bg-about .text-eerieBlack {
+  color: #f4f4f6;
+}
+
+html.dark .bg-about .inline-link {
+  color: #d4d4d8;
+}
+
+html.dark .bg-about .inline-link:hover {
+  color: #ffffff;
 }
