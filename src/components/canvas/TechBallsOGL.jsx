@@ -89,11 +89,18 @@ const TechBallsOGL = ({
     const container = containerRef.current
     if (!container) return
 
-    const renderer = new Renderer({
-      alpha: true,
-      antialias: true,
-      dpr: Math.min(window.devicePixelRatio || 1, 2),
-    })
+    let renderer
+    try {
+      renderer = new Renderer({
+        alpha: true,
+        antialias: true,
+        dpr: Math.min(window.devicePixelRatio || 1, 2),
+      })
+    } catch {
+      // No WebGL (disabled, blocklisted GPU, context limit). OGL throws here,
+      // and an uncaught effect error would unmount the whole app.
+      return
+    }
     const { gl } = renderer
     gl.clearColor(0, 0, 0, 0)
 

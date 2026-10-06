@@ -7,7 +7,11 @@ import { styles } from '../styles'
 import { textVariant } from '../utils/motion'
 
 // Defer the WebGL (OGL) bundle until the tech section is near the viewport.
-const TechBalls = lazy(() => import('./canvas/TechBallsOGL'))
+// A failed chunk load (e.g. stale hash after a deploy) renders nothing instead
+// of unmounting the app.
+const TechBalls = lazy(() =>
+  import('./canvas/TechBallsOGL').catch(() => ({ default: () => null })),
+)
 
 const Tech = () => {
   const gridRef = useRef(null)
